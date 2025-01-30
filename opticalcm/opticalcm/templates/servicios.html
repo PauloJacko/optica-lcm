@@ -1,0 +1,220 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* --- Estilos Globales --- */
+        body {
+            font-family: Arial, sans-serif;
+            margin-top: 120px; 
+        }
+        
+        /* --- Estilos del Navbar --- */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95); 
+            padding: 10px 20px;
+        }
+        
+        /* Color y tamaño de los enlaces */
+        .navbar a {
+            color: #004aad !important; /* Azul Cobalto */
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        /* Ajuste del Logo */
+        .navbar-brand img {
+            max-width: 150px; /* Mantiene compatibilidad con tus estilos previos */
+        }
+        
+        .navbar-logo {
+            height: 80px; /* Ajusta la altura del logo */
+            width: auto;
+        }
+        
+        /* Espaciado entre los elementos del Navbar */
+        .navbar-nav .nav-item {
+            margin-left: 20px;
+        }
+        
+        /* --- Estilos del Footer --- */
+        footer {
+            background-color: #004aad;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        /* Contenedor de contacto y mapa */
+        .footer-contact {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px;
+            align-items: center;
+        }
+        
+        /* Sección de Contacto */
+        .contact-info {
+            width: 48%;
+            padding: 20px;
+            text-align: center; /* Centra el texto dentro del cuadro */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Sección del Mapa */
+        .map-container {
+            width: 48%;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;  /* Cambiado para poner el título encima del mapa */
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Título de Ubicación */
+        .map-container h5 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        /* Mapa cuadrado */
+        .map-frame {
+            width: 250px;
+            height: 250px;
+            border-radius: 10px;
+            border: none;
+        }
+        
+        /* Línea divisoria */
+        .footer-line {
+            border: 0;
+            height: 1px;
+            background-color: white;
+            margin: 15px auto;
+            width: 80%;
+        }
+        
+        /* Sección inferior con la web y derechos reservados */
+        .footer-bottom {
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        /* --- Responsividad --- */
+        @media (max-width: 768px) {
+            /* Reducir tamaño del logo en móviles */
+            .navbar-brand img, .navbar-logo {
+                max-width: 120px;
+                height: auto;
+            }
+        
+            /* Alinear menú al centro en móviles */
+            .navbar-nav .nav-item {
+                margin-left: 0;
+                text-align: center;
+            }
+        
+            /* Footer responsivo */
+            .footer-contact {
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .contact-info, .map-container {
+                width: 100%;
+            }
+        
+            /* Mapa cuadrado en pantallas pequeñas */
+            .map-frame {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand d-flex align-items-center" href="{% url 'inicio' %}">
+            <img src="{% static 'img/logo-lcm.png' %}" alt="Logo LCM" class="navbar-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav ml-3">
+                <li class="nav-item">
+                    <a class="nav-link nav-text" href="{% url 'servicios' %}">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-text" href="{% url 'quienes_somos' %}">Quiénes Somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-text" href="{% url 'convenios' %}">Convenios</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Contenido principal -->
+    <div class="container">
+        <h1>Bienvenido a la Óptica LCM</h1>
+        <p>Estamos aquí para ayudarte con tus necesidades ópticas.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-contact">
+            <!-- Sección de Contacto -->
+            <div class="contact-info">
+                <h5>CONTACTO:</h5>
+                <p>Mauricio Tapia Villarroel</p>
+                <p>Gerente General LCM</p>
+                <p>+56 9 88037117</p>
+                <p>mauricio@opticaslcm.cl</p>
+            </div>
+    
+            <!-- Sección de Mapa -->
+            <div class="map-container">
+                <h5>UBÍCANOS:</h5>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.675689301287!2d-70.65033168487762!3d-33.462792780734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf3c7a540349%3A0xd6366ad2048ed290!2sÓptica%20LCM!5e0!3m2!1ses!2scl!4v1632127312403!5m2!1ses!2scl"
+                    class="map-frame"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    
+        <!-- Línea divisoria -->
+        <hr class="footer-line">
+    
+        <!-- Sección de derechos y página web -->
+        <div class="footer-bottom">
+            <p><a href="https://www.opticaslcm.cl" class="footer-link">www.opticaslcm.cl</a></p>
+            <p>© 2020 Ópticas LCM - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* --- Estilos Globales --- */
+        body {
+            font-family: Arial, sans-serif;
+            margin-top: 150px; 
+        }
+        
+        
+        /* --- Estilos del Navbar --- */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95); 
+            padding: 10px 20px;
+        }
+        
+        /* Color y tamaño de los enlaces */
+        .navbar a {
+            color: #004aad !important; /* Azul Cobalto */
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        /* Ajuste del Logo */
+        .navbar-brand img {
+            max-width: 150px; /* Mantiene compatibilidad con tus estilos previos */
+        }
+        
+        .navbar-logo {
+            height: 80px; /* Ajusta la altura del logo */
+            width: auto;
+        }
+        
+        /* Espaciado entre los elementos del Navbar */
+        .navbar-nav .nav-item {
+            margin-left: 20px;
+        }
+        
+        /* --- Estilos del Footer --- */
+        footer {
+            background-color: #004aad;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        /* Contenedor de contacto y mapa */
+        .footer-contact {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px;
+            align-items: center;
+        }
+        
+        /* Sección de Contacto */
+        .contact-info {
+            width: 48%;
+            padding: 20px;
+            text-align: center; /* Centra el texto dentro del cuadro */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Sección del Mapa */
+        .map-container {
+            width: 48%;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;  /* Cambiado para poner el título encima del mapa */
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Título de Ubicación */
+        .map-container h5 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        /* Mapa cuadrado */
+        .map-frame {
+            width: 250px;
+            height: 250px;
+            border-radius: 10px;
+            border: none;
+        }
+        
+        /* Línea divisoria */
+        .footer-line {
+            border: 0;
+            height: 1px;
+            background-color: white;
+            margin: 15px auto;
+            width: 80%;
+        }
+        
+        /* Sección inferior con la web y derechos reservados */
+        .footer-bottom {
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        /* --- Estilos específicos para la sección Quiénes Somos --- */
+        .equipo-trabajo {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .equipo-trabajo h1 {
+            font-size: 38px;
+            font-weight: bold;
+            color: #004aad; /* Azul Cobalto */
+            text-shadow: 2px 2px 4px rgba(0, 74, 173, 0.4); /* Sombra sutil */
+            margin-bottom: 30px;
+        }
+
+        .equipo-trabajo h2 {
+            font-size: 30px;
+            font-weight: bold;
+            color: #004aad;
+            text-transform: uppercase;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .equipo-trabajo p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        /* Ajuste de la presentación de las imágenes en contenedor vertical */
+        .miembro-equipo {
+            display: inline-block;
+            text-align: center;
+            margin: 20px;
+            width: 200px;  /* Ajuste de tamaño del contenedor */
+        }
+
+        .miembro-equipo img {
+            width: 100%;  /* Mantener el tamaño completo de la imagen */
+            height: auto;  /* Mantener la proporción de la imagen */
+            object-fit: contain;  /* Ajustar la imagen dentro del contenedor sin recortarla */
+        }
+
+        .miembro-equipo-titulo {
+            font-size: 16px;
+            font-weight: bold;
+            color: #004aad; /* Azul Cobalto */
+            margin-top: 15px;
+        }
+
+        .miembro-equipo-cargo {
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* --- Responsividad --- */
+        @media (max-width: 768px) {
+            /* Reducir tamaño del logo en móviles */
+            .navbar-brand img, .navbar-logo {
+                max-width: 120px;
+                height: auto;
+            }
+        
+            /* Alinear menú al centro en móviles */
+            .navbar-nav .nav-item {
+                margin-left: 0;
+                text-align: center;
+            }
+        
+            /* Footer responsivo */
+            .footer-contact {
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .contact-info, .map-container {
+                width: 100%;
+            }
+        
+            /* Mapa cuadrado en pantallas pequeñas */
+            .map-frame {
+                width: 200px;
+                height: 200px;
+            }
+
+            /* Ajustar el tamaño de las imágenes en equipo */
+            .miembro-equipo img {
+                height: 180px;  /* Ajuste de tamaño de la imagen */
+            }
+        }
+        /* --- Estilos de la Lista de Valores --- */
+        .no-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .no-list li {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #555;    
+            line-height: 1.6;
+        }
+
+        /* Estilo para los botones de contacto */
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .contact-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            font-size: 16px;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            width: auto;
+            max-width: 300px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-button:hover {
+            background-color: #2d92d7; /* Azul Cobalto en hover */
+        }
+        
+        .email-button {
+            background-color: #c13584; /* Color personalizado para Gmail */
+        }
+        
+        .whatsapp-button {
+            background-color: #25d366; /* Color personalizado para WhatsApp */
+        }
+        
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            object-fit: contain;  /* Mantener la proporción de la imagen */
+        }
+        
+        .contact-button img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand d-flex align-items-center" href="{% url 'inicio' %}">
+            <img src="{% static 'img/logo-lcm.png' %}" alt="Logo LCM" class="navbar-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav ml-3">
+                <li class="nav-item">
+                    <a class="nav-link nav-text" href="{% url 'servicios' %}">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-text" href="{% url 'quienes_somos' %}">Quiénes Somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-text" href="{% url 'convenios' %}">Convenios</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Contenido principal -->
+<div class="container equipo-trabajo">
+    <h1>Quiénes Somos</h1>
+
+    <p>Somos una empresa orientada a la implementación de Campañas Óptico - Oftalmológicas en terreno a Instituciones y Empresas de todo el país. Brindamos un servicio profesional y personalizado que optimiza los tiempos de trabajo a nuestros clientes. Contamos con profesionales altamente capacitados, además de altos estándares de calidad en todos los procesos y productos, garantizando la satisfacción a nuestros clientes.</p>
+
+    <h2>Misión</h2>
+    <p>En Ópticas LCM, nos dedicamos a proporcionar soluciones ópticas de alta calidad, brindando acceso a una atención especializada para mejorar la salud visual de nuestros clientes en todo el país. Estamos comprometidos con el servicio personalizado, la tecnología avanzada y la eficiencia para garantizar la satisfacción de cada persona.</p>
+
+    <h2>Visión</h2>
+    <p>Aspiramos a ser líderes en el campo de la salud visual, reconocidos por nuestra atención integral, la innovación constante en nuestros servicios, y nuestro compromiso con el bienestar de cada persona. Nuestro objetivo es ofrecer servicios que aseguren una visión clara y saludable para todos nuestros clientes.</p>
+
+    <h2>Valores</h2>
+<ul class="no-list">
+<li>Compromiso con la calidad y el servicio profesional.</li>
+<li>Confianza y responsabilidad en la atención personalizada.</li>
+<li>Innovación en soluciones ópticas que mejoren la calidad de vida.</li>
+<li>Pasión por la salud visual y el bienestar de nuestros clientes.</li>
+</ul>
+
+    <h2>Nuestro Equipo</h2>
+    <div class="miembro-equipo">
+        <img src="{% static 'img/mauricio_pro.jpg' %}" alt="Mauricio Tapia Villarroel">
+        <div class="miembro-equipo-titulo">Mauricio Tapia Villarroel</div>
+        <div class="miembro-equipo-cargo">Gerente General, Especialista en venta óptica</div>
+    </div>
+
+    <div class="miembro-equipo">
+        <img src="{% static 'img/cristobal_pro.jpg' %}" alt="Cristobal Maurens Silva">
+        <div class="miembro-equipo-titulo">Cristobal Maurens Silva</div>
+        <div class="miembro-equipo-cargo">Director Ejecutivo, TMO Optometría</div>
+    </div>
+
+<!-- Botones de contacto -->
+<div class="contact-buttons">
+
+    <a href="mailto:serviciosopticosintegrales.mt@gmail.com" class="contact-button email-button" target="_blank">
+        <img src="{% static 'img/logo-gmail.png' %}" alt="Gmail Logo" class="contact-icon"> 
+        Contactanos
+    </a>
+
+    <a href="https://wa.me/56988037117?text=¡Hola!%20Me%20gustaría%20saber%20más%20sobre%20sus%20servicios." class="contact-button whatsapp-button" target="_blank">
+        <img src="{% static 'img/logo-ws.png' %}" alt="WhatsApp Logo" class="contact-icon">
+        Contactanos
+    </a>
+</div>
+
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-contact">
+            <div class="contact-info">
+                <h5>CONTACTO:</h5>
+                <p>Mauricio Tapia Villarroel</p>
+                <p>Gerente General LCM</p>
+                <p>+56 9 88037117</p>
+                <p>serviciosopticosintegrales.mt@gmail.com</p>
+            </div>
+    
+            <div class="map-container">
+                <h5>UBÍCANOS:</h5>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.675689301287!2d-70.65033168487762!3d-33.462792780734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf3c7a540349%3A0xd6366ad2048ed290!2sÓptica%20LCM!5e0!3m2!1ses!2scl!4v1632127312403!5m2!1ses!2scl"
+                    class="map-frame"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    
+        <hr class="footer-line">
+    
+        <div class="footer-bottom">
+            <p><a href="https://www.opticaslcm.cl" class="footer-link">www.opticaslcm.cl</a></p>
+            <p>© 2020 Ópticas LCM - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
