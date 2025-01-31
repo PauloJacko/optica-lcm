@@ -51,45 +51,50 @@
             text-align: center;
         }
         
-        /* Contenedor de contacto y mapa */
-        .footer-contact {
+        /* Contenedor principal en 3 columnas (modo escritorio) */
+        .footer-container {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             padding: 20px;
             align-items: center;
+            text-align: center;
         }
         
-        /* Sección de Contacto */
-        .contact-info {
-            width: 48%;
+        /* Secciones del Footer */
+        .footer-section {
+            width: 30%; /* 3 columnas en pantallas grandes */
             padding: 20px;
-            text-align: center; /* Centra el texto dentro del cuadro */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
         
-        /* Sección del Mapa */
-        .map-container {
-            width: 48%;
-            padding: 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;  /* Cambiado para poner el título encima del mapa */
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* Título de Ubicación */
-        .map-container h5 {
+        /* Estilo de los títulos en cada sección */
+        .footer-section h5 {
             margin-bottom: 10px;
             font-size: 18px;
             font-weight: bold;
         }
         
-        /* Mapa cuadrado */
+        /* Estilo del contacto */
+        .contact-info p {
+            margin: 5px 0;
+        }
+        
+        /* Imagen de Instagram */
+        .instagram-logo {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+        
+        .instagram-logo:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Estilo del mapa */
         .map-frame {
             width: 250px;
             height: 250px;
@@ -116,6 +121,27 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
+        }
+        
+        /* RESPONSIVIDAD */
+        
+        /* Tablets (768px o menos) - 2 columnas */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .footer-section {
+                width: 45%; /* Dos columnas */
+                margin-bottom: 20px;
+            }
+        }
+        
+        /* Celulares (480px o menos) - 1 columna */
+        @media (max-width: 480px) {
+            .footer-section {
+                width: 100%; /* Una columna */
+            }
         }
         
         /* --- Estilos específicos para la sección Quiénes Somos --- */
@@ -188,22 +214,6 @@
                 text-align: center;
             }
         
-            /* Footer responsivo */
-            .footer-contact {
-                flex-direction: column;
-                text-align: center;
-            }
-        
-            .contact-info, .map-container {
-                width: 100%;
-            }
-        
-            /* Mapa cuadrado en pantallas pequeñas */
-            .map-frame {
-                width: 200px;
-                height: 200px;
-            }
-
             /* Ajustar el tamaño de las imágenes en equipo */
             .miembro-equipo img {
                 height: 180px;  /* Ajuste de tamaño de la imagen */
@@ -346,35 +356,46 @@
 
 </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-contact">
-            <div class="contact-info">
-                <h5>CONTACTO:</h5>
-                <p>Mauricio Tapia Villarroel</p>
-                <p>Gerente General LCM</p>
-                <p>+56 9 88037117</p>
-                <p>serviciosopticosintegrales.mt@gmail.com</p>
-            </div>
-    
-            <div class="map-container">
-                <h5>UBÍCANOS:</h5>
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.675689301287!2d-70.65033168487762!3d-33.462792780734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf3c7a540349%3A0xd6366ad2048ed290!2sÓptica%20LCM!5e0!3m2!1ses!2scl!4v1632127312403!5m2!1ses!2scl"
-                    class="map-frame"
-                    allowfullscreen=""
-                    loading="lazy">
-                </iframe>
-            </div>
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- Información de contacto -->
+        <div class="footer-section contact-info">
+            <h5>CONTACTO:</h5>
+            <p>Mauricio Tapia Villarroel</p>
+            <p>Gerente General LCM</p>
+            <p>+56 9 88037117</p>
+            <p>serviciosopticosintegrales.mt@gmail.com</p>
         </div>
-    
-        <hr class="footer-line">
-    
-        <div class="footer-bottom">
-            <p><a href="https://www.opticaslcm.cl" class="footer-link">www.opticaslcm.cl</a></p>
-            <p>© 2020 Ópticas LCM - Todos los derechos reservados</p>
+
+        <!-- Síguenos en Instagram -->
+        <div class="footer-section follow-us">
+            <h5>SÍGUENOS:</h5>
+            <a href="https://www.instagram.com/serviciosopticoslcm/" target="_blank">
+                <img src="{% static 'img/logo-instagram.png' %}" alt="Instagram" class="instagram-logo">
+            </a>
         </div>
-    </footer>
+
+        <!-- Ubicación con Google Maps -->
+        <div class="footer-section map-container">
+            <h5>UBÍCANOS:</h5>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.675689301287!2d-70.65033168487762!3d-33.462792780734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf3c7a540349%3A0xd6366ad2048ed290!2sÓptica%20LCM!5e0!3m2!1ses!2scl!4v1632127312403!5m2!1ses!2scl"
+                class="map-frame"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+    <hr class="footer-line">
+
+    <!-- Parte inferior del footer -->
+    <div class="footer-bottom">
+        <p><a href="https://www.opticaslcm.cl" class="footer-link">www.opticaslcm.cl</a></p>
+        <p>© 2020 Ópticas LCM - Todos los derechos reservados</p>
+    </div>
+</footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
