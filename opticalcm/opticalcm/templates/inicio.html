@@ -194,6 +194,8 @@ footer {
     background-color: #fff;  /* Color blanco para el punto activo */
 }
 
+
+
 /* Sección Servicios en Terreno */
 .servicios-terreno {
     font-family: verdana;
@@ -245,6 +247,50 @@ footer {
 @media (max-width: 480px) {
     .contenedor-servicios {
         grid-template-columns: 1fr;
+    }
+}
+
+
+/* Estilos generales del carrusel */
+.carrusel2 {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background: #f8f9fa; /* Fondo opcional */
+    padding: 15px 0;
+    white-space: nowrap;
+}
+
+/* Contenedor con imágenes duplicadas */
+.carrusel2-track {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    width: calc(200px * 10); /* Ancho fijo: 10 imágenes de 200px cada una */
+    will-change: transform; /* Optimiza la animación */
+    animation: scroll-loop 15s linear infinite;
+}
+
+/* Imágenes del carrusel */
+.carrusel2-track img {
+    height: 120px; /* Tamaño más grande */
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+}
+
+/* Pausar animación al pasar el mouse */
+.carrusel2-track:hover {
+    animation-play-state: paused;
+}
+
+/* Animación de desplazamiento constante */
+@keyframes scroll-loop {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-50%); /* Se mueve la mitad para mantener el loop */
     }
 }
     </style>
@@ -342,6 +388,28 @@ footer {
             <p>Derivación oportuna</p>
         </div>
     </a>
+    </div>
+</section>
+
+<!-- Carrusel Infinito -->
+<section class="nuestros-convenios">
+    <h2 class="text-center">Nuestros Convenios</h2>
+    <div class="carrusel2"> 
+        <div class="carrusel2-track"> 
+            <!-- Imágenes originales -->
+            <img src="{% static 'img/logo-integra.png' %}" alt="Integra">
+            <img src="{% static 'img/logo-conosur.png' %}" alt="Conosur">
+            <img src="{% static 'img/logo-bci.png' %}" alt="BCI">
+            <img src="{% static 'img/logo-mineduc.png' %}" alt="Mineduc">
+            <img src="{% static 'img/logo-ips.png' %}" alt="IPS">
+
+            <!-- Duplicamos las imágenes para que el loop funcione -->
+            <img src="{% static 'img/logo-integra.png' %}" alt="Integra">
+            <img src="{% static 'img/logo-conosur.png' %}" alt="Conosur">
+            <img src="{% static 'img/logo-bci.png' %}" alt="BCI">
+            <img src="{% static 'img/logo-mineduc.png' %}" alt="Mineduc">
+            <img src="{% static 'img/logo-ips.png' %}" alt="IPS">
+        </div>
     </div>
 </section>
 
