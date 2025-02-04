@@ -45,7 +45,7 @@
         
         /* --- Estilos del Footer --- */
         footer {
-            background-color: #004aad;
+            background-color: #002b64;
             color: white;
             padding: 20px 0;
             text-align: center;
@@ -164,7 +164,7 @@
             color: #004aad;
             text-transform: uppercase;
             margin-top: 30px;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
         }
 
         .equipo-trabajo p {
@@ -175,17 +175,25 @@
         }
 
         /* Ajuste de la presentación de las imágenes en contenedor vertical */
-        .miembro-equipo {
-            display: inline-block;
-            text-align: center;
-            margin: 20px;
-            width: 200px;  /* Ajuste de tamaño del contenedor */
+        .equipo-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
         }
 
         .miembro-equipo img {
-            width: 100%;  /* Mantener el tamaño completo de la imagen */
-            height: auto;  /* Mantener la proporción de la imagen */
-            object-fit: contain;  /* Ajustar la imagen dentro del contenedor sin recortarla */
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 480px) {
+            .miembro-equipo img {
+                object-fit: contain;
+            }
         }
 
         .miembro-equipo-titulo {
@@ -214,10 +222,6 @@
                 text-align: center;
             }
         
-            /* Ajustar el tamaño de las imágenes en equipo */
-            .miembro-equipo img {
-                height: 180px;  /* Ajuste de tamaño de la imagen */
-            }
         }
         /* --- Estilos de la Lista de Valores --- */
         .no-list {
@@ -258,8 +262,10 @@
         }
         
         .contact-button:hover {
-            background-color: #2d92d7; /* Azul Cobalto en hover */
-        }
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            }
         
         .email-button {
             background-color: #c13584; /* Color personalizado para Gmail */
@@ -327,7 +333,8 @@
 <li>Pasión por la salud visual y el bienestar de nuestros clientes.</li>
 </ul>
 
-    <h2>Nuestro Equipo</h2>
+<h2>Nuestro Equipo</h2>
+<div class="equipo-container">
     <div class="miembro-equipo">
         <img src="{% static 'img/mauricio_pro.jpg' %}" alt="Mauricio Tapia Villarroel">
         <div class="miembro-equipo-titulo">Mauricio Tapia Villarroel</div>
@@ -339,6 +346,7 @@
         <div class="miembro-equipo-titulo">Cristobal Maurens Silva</div>
         <div class="miembro-equipo-cargo">Director Ejecutivo, TMO Optometría</div>
     </div>
+</div>
 
 <!-- Botones de contacto -->
 <div class="contact-buttons">

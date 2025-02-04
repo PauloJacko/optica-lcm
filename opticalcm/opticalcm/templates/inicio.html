@@ -45,7 +45,7 @@ body {
 
 /* --- Estilos del Footer --- */
 footer {
-    background-color: #004aad;
+    background-color: #002b64;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -319,8 +319,8 @@ footer {
         </div>
     </nav>
 
-<!-- Carrusel con 3 imágenes -->
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+<!-- Carrusel con 2 imágenes y 1 video -->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="4000">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -328,7 +328,10 @@ footer {
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{% static 'img/carrusel-1.png' %}" class="d-block w-100" alt="Carrusel Imagen 1">
+            <video class="d-block w-100" autoplay loop muted playsinline>
+                <source src="{% static 'img/carrusel1-video.mp4' %}" type="video/mp4">
+                Tu navegador no soporta la reproducción de videos.
+            </video>
         </div>
         <div class="carousel-item">
             <img src="{% static 'img/carrusel-2.png' %}" class="d-block w-100" alt="Carrusel Imagen 2">

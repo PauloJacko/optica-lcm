@@ -44,7 +44,7 @@
         
         /* --- Estilos del Footer --- */
         footer {
-            background-color: #004aad;
+            background-color: #002b64;
             color: white;
             padding: 20px 0;
             text-align: center;
@@ -158,6 +158,138 @@
             }
         
         }
+
+        .servicios-container {
+            padding: 60px 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #0c3a4d;
+        }
+        
+        .servicio {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .servicio.reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .servicio-text {
+            flex: 1;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .servicio-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #0056b3;
+        }
+        
+        .servicio-text p,
+        .servicio-text ul {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .servicio-text ul {
+            padding-left: 20px;
+        }
+        
+        .servicio-img {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .servicio-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Estilo de la garantía */
+        .nota-garantia {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #ff0000;
+        }
+        
+        /* RESPONSIVIDAD */
+        @media (max-width: 768px) {
+            .servicio {
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .servicio.reverse {
+                flex-direction: column;
+            }
+        }
+
+        /* Estilo para los botones de contacto */
+        .contact-buttons {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding-top: 30px;  
+            padding-bottom: 30px;  
+        }
+        .contact-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            font-size: 16px;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            width: auto;
+            max-width: 300px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-button:hover {
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            }
+        
+        .email-button {
+            background-color: #c13584; /* Color personalizado para Gmail */
+        }
+        
+        .whatsapp-button {
+            background-color: #25d366; /* Color personalizado para WhatsApp */
+        }
+        
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            object-fit: contain;  /* Mantener la proporción de la imagen */
+        }
+
+
+        .contact-button img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -183,11 +315,96 @@
             </ul>
         </div>
     </nav>
-    <!-- Contenido principal -->
+
+    <!-- Contenido de la página de servicios -->
+<section class="servicios-container">
     <div class="container">
-        <h1>Bienvenido a la Óptica LCM</h1>
-        <p>Estamos aquí para ayudarte con tus necesidades ópticas.</p>
+        <h2 class="text-center section-title">Nuestros Servicios</h2>
+
+        <!-- Sección: Atención Oftalmológica -->
+        <div class="servicio">
+            <div class="servicio-text">
+                <h3>Atención Oftalmológica</h3>
+                <p><strong>Anamnesis Médica:</strong> Evaluación clínica del paciente.</p>
+                <p><strong>Autorefractometría:</strong> Examen preliminar para detectar problemas de refracción como Miopía, Astigmatismo e Hipermetropía.</p>
+                <p><strong>Medición de Agudeza Visual:</strong> Realizada por un Tecnólogo Médico Universitario, determinando la receta óptica final.</p>
+                <p><strong>Exámenes Específicos:</strong> Incluyen presión ocular, oftalmoscopía y test de Schirmer (evaluación de ojo seco).</p>
+                <p><strong>Entrega de Informe Clínico:</strong> Con los resultados y recomendaciones personalizadas.</p>
+            </div>
+            <div class="servicio-img">
+                <img src="{% static 'img/servicio1.jpg' %}" alt="Atención oftalmológica">
+            </div>
+        </div>
+
+        <!-- Sección: Evaluaciones Complementarias -->
+        <div class="servicio reverse">
+            <div class="servicio-text">
+                <h3>Evaluaciones Complementarias</h3>
+                <p>Dirigidas a personas mayores de 40 años y pacientes con enfermedades crónicas como diabetes o hipertensión.</p>
+                <ul>
+                    <li><strong>Toma de presión ocular:</strong> Importante para detectar glaucoma en personas con antecedentes familiares.</li>
+                    <li><strong>Examen de Rojo Pupilar + AV SC:</strong> Para descartar sospecha de cataratas.</li>
+                    <li><strong>Evaluación del síndrome de “Ojo Seco”:</strong> Incluye set de lágrimas artificiales de bajo costo.</li>
+                    <li><strong>Oftalmoscopía directa:</strong> Observación del fondo de ojo para descartar patologías visuales.</li>
+                </ul>
+            </div>
+            <div class="servicio-img">
+                <img src="{% static 'img/servicio2.jpeg' %}" alt="Evaluaciones complementarias">
+            </div>
+        </div>
+
+        <!-- Sección: Asesoramiento Óptico -->
+        <div class="servicio">
+            <div class="servicio-text">
+                <h3>Asesoramiento Óptico</h3>
+                <p>Contamos con un óptico profesional que guiará a cada paciente en la selección de cristales y armazones adecuados.</p>
+                <ul>
+                    <li>Evaluación de la mejor opción óptica según la receta.</li>
+                    <li>Asesoría estética y técnica en la elección del armazón.</li>
+                    <li>Proceso integral para facilitar la compra del lente óptico.</li>
+                </ul>
+            </div>
+            <div class="servicio-img">
+                <img src="{% static 'img/servicio3.jpg' %}" alt="Asesoramiento óptico">
+            </div>
+        </div>
+
+        <!-- Sección: Entrega del Producto y Post-Venta -->
+        <div class="servicio reverse">
+            <div class="servicio-text">
+                <h3>Entrega del Producto y Post-Venta</h3>
+                <p>Antes de la entrega, verificamos que el paciente reciba una atención completa:</p>
+                <ul>
+                    <li>Comprobación de agudeza visual.</li>
+                    <li>Ajuste y comodidad del lente.</li>
+                    <li>Explicación del uso y cuidado adecuado.</li>
+                    <li>Inducción sobre la ametropía refractiva del paciente.</li>
+                    <li>Entrega de documentos para reembolso (boletas, recetas, etc.).</li>
+                </ul>
+                <h4>Garantía de Nuestros Productos</h4>
+                <p>Todos nuestros productos cuentan con una garantía de hasta <strong>6 meses</strong> en casos de defectos de material o fabricación.</p>
+                <p class="nota-garantia">La garantía no cubre daños por mal uso, pero ofrecemos asesoría técnica y descuentos en reparaciones.</p>
+            </div>
+            <div class="servicio-img">
+                <img src="{% static 'img/servicio4.png' %}" alt="Entrega de producto y post-venta">
+            </div>
+        </div>
     </div>
+</section>
+
+<!-- Botones de contacto -->
+<div class="contact-buttons">
+
+    <a href="mailto:serviciosopticosintegrales.mt@gmail.com" class="contact-button email-button" target="_blank">
+        <img src="{% static 'img/logo-gmail.png' %}" alt="Gmail Logo" class="contact-icon"> 
+        Contactanos
+    </a>
+
+    <a href="https://wa.me/56988037117?text=¡Hola!%20Me%20gustaría%20saber%20más%20sobre%20sus%20servicios." class="contact-button whatsapp-button" target="_blank">
+        <img src="{% static 'img/logo-ws.png' %}" alt="WhatsApp Logo" class="contact-icon">
+        Contactanos
+    </a>
+</div>
 
     <!-- Footer -->
 <footer>
