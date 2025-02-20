@@ -22,7 +22,7 @@ body {
 
 /* Color y tamaño de los enlaces */
 .navbar a {
-    color: #004aad !important; /* Azul Cobalto */
+    color: #00275a !important; /* Azul Cobalto */
     font-size: 18px;
     font-weight: bold;
 }
@@ -45,7 +45,7 @@ body {
 
 /* --- Estilos del Footer --- */
 footer {
-    background-color: #002b64;
+    background-color: #00275a;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -226,15 +226,19 @@ footer {
     margin: 0 auto;
     position: relative;
 }
+
 .servicio {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    background-color: #1c3d5a; /* Color principal */
+    color: white;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordes sutiles */
 }
 
 .servicio img {
@@ -243,14 +247,18 @@ footer {
     object-fit: contain;
     margin-bottom: 10px;
 }
-.servicio p {
-    font-weight: bold;
-    color: white;
 
+.servicio p {
+    font-size: 1.1rem;
+    font-weight: 500;
 }
+
 .servicio:hover {
-    transform: scale(1.1);
+    background-color: #284c70;
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 }
+
 @media (max-width: 768px) {
     .contenedor-servicios {
         grid-template-columns: repeat(2, 1fr);
@@ -369,41 +377,41 @@ footer {
     <h2 class="text-center">Nuestros Servicios en Terreno</h2>
     <div class="contenedor-servicios">
         <a href="{% url 'servicios' %}">
-        <div class="servicio " style="background-color: #0047ab;">
-            <img src="{% static 'img/examen1.png' %}" alt="Pruebas optométricas">
-            <p>Pruebas optométricas</p>
-        </div>
-    </a>
+            <div class="servicio">
+                <img src="{% static 'img/examen1.png' %}" alt="Pruebas optométricas">
+                <p>Pruebas optométricas</p>
+            </div>
+        </a>
         <a href="{% url 'servicios' %}">
-        <div class="servicio" style="background-color: #5dbe9d;">
-            <img src="{% static 'img/examen2.png' %}" alt="Exámenes complementarios">
-            <p>Exámenes complementarios</p>
-        </div>
-    </a>
+            <div class="servicio">
+                <img src="{% static 'img/examen2.png' %}" alt="Exámenes complementarios">
+                <p>Examen complementario</p>
+            </div>
+        </a>
         <a href="{% url 'servicios' %}">
-        <div class="servicio" style="background-color: #FFA07A;">
-            <img src="{% static 'img/examen3.png' %}" alt="Recetas ópticas">
-            <p>Recetas ópticas</p>
-        </div>
-    </a>
+            <div class="servicio">
+                <img src="{% static 'img/examen3.png' %}" alt="Recetas ópticas">
+                <p>Recetas ópticas</p>
+            </div>
+        </a>
         <a href="{% url 'servicios' %}">
-        <div class="servicio servicio-abajo" style="background-color: #FFD700;">
-            <img src="{% static 'img/examen4.png' %}" alt="Profesionales con amplia trayectoria">
-            <p>Profesionales capacitados</p>
-        </div>
-    </a>
+            <div class="servicio">
+                <img src="{% static 'img/examen4.png' %}" alt="Profesionales con amplia trayectoria">
+                <p>Profesionales capacitados</p>
+            </div>
+        </a>
         <a href="{% url 'servicios' %}">
-        <div class="servicio servicio-abajo" style="background-color: #9370DB;">
-            <img src="{% static 'img/examen5.png' %}" alt="Entrega de lentes ópticos">
-            <p>Entrega de lentes ópticos</p>
-        </div>
-    </a>
+            <div class="servicio">
+                <img src="{% static 'img/examen5.png' %}" alt="Entrega de lentes ópticos">
+                <p>Entrega de lentes ópticos</p>
+            </div>
+        </a>
         <a href="{% url 'servicios' %}">
-        <div class="servicio servicio-abajo" style="background-color: #757575;">
-            <img src="{% static 'img/examen6.png' %}" alt="Derivación oportuna">
-            <p>Derivación oportuna</p>
-        </div>
-    </a>
+            <div class="servicio">
+                <img src="{% static 'img/examen6.png' %}" alt="Derivación oportuna">
+                <p>Derivación oportuna</p>
+            </div>
+        </a>
     </div>
 </section>
 
