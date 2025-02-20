@@ -17,7 +17,8 @@
         /* --- Estilos del Navbar --- */
         .navbar {
             background-color: rgba(255, 255, 255, 0.95); 
-            padding: 10px 20px;
+            padding: 5px 10px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
         }
         
         /* Color y tamaño de los enlaces */
@@ -46,8 +47,10 @@
         footer {
             background-color: #00275a;
             color: white;
-            padding: 20px 0;
+            padding: 10px 0;
             text-align: center;
+            font-size: 14px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
         }
         
         /* Contenedor principal en 3 columnas (modo escritorio) */
@@ -55,15 +58,15 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            padding: 20px;
+            padding: 10px;
             align-items: center;
             text-align: center;
         }
         
         /* Secciones del Footer */
         .footer-section {
-            width: 30%; /* 3 columnas en pantallas grandes */
-            padding: 20px;
+            width: 30%; 
+            padding: 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -72,8 +75,8 @@
         
         /* Estilo de los títulos en cada sección */
         .footer-section h5 {
-            margin-bottom: 10px;
-            font-size: 18px;
+            margin-bottom: 5px;
+            font-size: 16px;
             font-weight: bold;
         }
         
@@ -84,8 +87,8 @@
         
         /* Imagen de Instagram */
         .instagram-logo {
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             transition: transform 0.3s ease;
         }
         
@@ -95,10 +98,11 @@
         
         /* Estilo del mapa */
         .map-frame {
-            width: 250px;
-            height: 250px;
+            width: 80%;
+            height: 180px;
             border-radius: 10px;
             border: none;
+            box-shadow: 0px 3px 6px rgba(255, 255, 255, 0.79);
         }
         
         /* Línea divisoria */
@@ -106,14 +110,14 @@
             border: 0;
             height: 1px;
             background-color: white;
-            margin: 15px auto;
+            margin: 5px auto;
             width: 80%;
         }
         
         /* Sección inferior con la web y derechos reservados */
         .footer-bottom {
             text-align: center;
-            font-size: 14px;
+            font-size: 12px;
         }
         
         .footer-link {
@@ -121,7 +125,7 @@
             text-decoration: none;
             font-weight: bold;
         }
-
+        
         .contactisimo {
             color: white;
             text-decoration: none;
@@ -132,6 +136,14 @@
             color: white;
             text-decoration: none;
             text-decoration-line: none;
+        }
+        
+        .contactisimo:hover {
+            transform: scale(1.1);
+        }
+        
+        .contactisimo2:hover {
+            transform: scale(1.1);
         }
         
         /* RESPONSIVIDAD */
@@ -278,7 +290,7 @@
             width: auto;
             max-width: 300px;
             transition: background-color 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
         }
         
         .contact-button:hover {
@@ -288,18 +300,18 @@
             }
         
         .email-button {
-            background-color: #c13584; /* Color personalizado para Gmail */
+            background-color: #c13584; 
         }
         
         .whatsapp-button {
-            background-color: #25d366; /* Color personalizado para WhatsApp */
+            background-color: #25d366;
         }
         
         .contact-icon {
             width: 24px;
             height: 24px;
             margin-right: 10px;
-            object-fit: contain;  /* Mantener la proporción de la imagen */
+            object-fit: contain; 
         }
 
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Inicio</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/inicio.css' %}">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* --- Estilos Globales --- */
@@ -17,20 +17,21 @@ body {
 /* --- Estilos del Navbar --- */
 .navbar {
     background-color: rgba(255, 255, 255, 0.95); 
-    padding: 10px 20px;
+    padding: 5px 10px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Color y tamaño de los enlaces */
 .navbar a {
-    color: #00275a !important; /* Azul Cobalto */
+    color: #00275a !important; 
     font-size: 18px;
     font-weight: bold;
 }
 
 /* Ajuste del Logo */
 .navbar-brand img, .navbar-logo {
-    max-width: 100px !important; /* Ajuste para pantallas pequeñas */
-    height: auto !important;  /* Mantener proporción */
+    max-width: 100px !important; 
+    height: auto !important; 
 }
 
 /* Espaciado entre los elementos del Navbar */
@@ -47,8 +48,10 @@ body {
 footer {
     background-color: #00275a;
     color: white;
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: center;
+    font-size: 14px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Contenedor principal en 3 columnas (modo escritorio) */
@@ -56,15 +59,15 @@ footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 10px;
     align-items: center;
     text-align: center;
 }
 
 /* Secciones del Footer */
 .footer-section {
-    width: 30%; /* 3 columnas en pantallas grandes */
-    padding: 20px;
+    width: 30%; 
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,8 +76,8 @@ footer {
 
 /* Estilo de los títulos en cada sección */
 .footer-section h5 {
-    margin-bottom: 10px;
-    font-size: 18px;
+    margin-bottom: 5px;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -85,8 +88,8 @@ footer {
 
 /* Imagen de Instagram */
 .instagram-logo {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     transition: transform 0.3s ease;
 }
 
@@ -96,10 +99,11 @@ footer {
 
 /* Estilo del mapa */
 .map-frame {
-    width: 250px;
-    height: 250px;
+    width: 80%;
+    height: 180px;
     border-radius: 10px;
     border: none;
+    box-shadow: 0px 3px 6px rgba(255, 255, 255, 0.79);
 }
 
 /* Línea divisoria */
@@ -107,14 +111,14 @@ footer {
     border: 0;
     height: 1px;
     background-color: white;
-    margin: 15px auto;
+    margin: 5px auto;
     width: 80%;
 }
 
 /* Sección inferior con la web y derechos reservados */
 .footer-bottom {
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .footer-link {
@@ -135,6 +139,15 @@ footer {
     text-decoration-line: none;
 }
 
+.contactisimo:hover {
+    transform: scale(1.1);
+}
+
+.contactisimo2:hover {
+    transform: scale(1.1);
+}
+
+
 /* RESPONSIVIDAD */
 
 /* Tablets (768px o menos) - 2 columnas */
@@ -144,7 +157,7 @@ footer {
         justify-content: center;
     }
     .footer-section {
-        width: 45%; /* Dos columnas */
+        width: 45%; 
         margin-bottom: 20px;
     }
 }
@@ -158,7 +171,6 @@ footer {
 
 /* --- Responsividad --- */
 @media (max-width: 768px) {
-    /* Reducir tamaño del logo en móviles */
     .navbar-brand img, .navbar-logo {
         max-width: 100px !important;
         height: auto !important;
@@ -184,26 +196,26 @@ footer {
 /* Ajuste de los puntos debajo de las imágenes */
 .carousel-indicators {
     position: absolute;
-    bottom: 10px;  /* Se asegura de que los puntos estén más cerca de la parte inferior */
+    bottom: 10px;  
     left: 0;
     right: 0;
-    display: flex;  /* Usamos flexbox para centrar los puntos */
-    justify-content: center;  /* Centra los puntos horizontalmente */
-    z-index: 1;  /* Asegura que los puntos estén por encima de las imágenes */
+    display: flex;  
+    justify-content: center;  
+    z-index: 1; 
 }
 
 /* Estilo de los puntos indicadores */
 .carousel-indicators li {
-    background-color: rgba(0, 0, 0, 0.5);  /* Color de los puntos */
-    border-radius: 50%;  /* Los puntos deben ser redondos */
-    width: 10px;  /* Tamaño de los puntos */
+    background-color: rgba(0, 0, 0, 0.5);  
+    border-radius: 50%;  
+    width: 10px; 
     height: 10px;
-    margin: 0 5px;  /* Espaciado entre los puntos */
+    margin: 0 5px; 
 }
 
 /* Puntos activos */
 .carousel-indicators .active {
-    background-color: #fff;  /* Color blanco para el punto activo */
+    background-color: #fff;
 }
 
 
@@ -213,7 +225,7 @@ footer {
     font-family: verdana;
     padding: 50px 20px;
     text-align: center;
-    text-shadow: #051797 1px 0 3px;
+    text-shadow: #020e66 
 }
 .contenedor-servicios {
     display: grid;
@@ -234,11 +246,11 @@ footer {
     justify-content: center;
     padding: 20px;
     border-radius: 12px;
-    background-color: #1c3d5a; /* Color principal */
+    background-color: #1c3d5a; 
     color: white;
     transition: all 0.3s ease-in-out;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordes sutiles */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
 }
 
 .servicio img {
@@ -276,7 +288,7 @@ footer {
     overflow: hidden;
     position: relative;
     width: 100%;
-    background: #f8f9fa; /* Fondo opcional */
+    background: #f8f9fa; 
     padding: 15px 0;
     white-space: nowrap;
 }
@@ -286,14 +298,14 @@ footer {
     display: flex;
     align-items: center;
     gap: 50px;
-    width: calc(200px * 10); /* Ancho fijo: 10 imágenes de 200px cada una */
-    will-change: transform; /* Optimiza la animación */
+    width: calc(200px * 10);
+    will-change: transform; 
     animation: scroll-loop 15s linear infinite;
 }
 
 /* Imágenes del carrusel */
 .carrusel2-track img {
-    height: 120px; /* Tamaño más grande */
+    height: 120px; 
     width: auto;
     max-width: 200px;
     object-fit: contain;
@@ -310,11 +322,97 @@ footer {
         transform: translateX(0%);
     }
     to {
-        transform: translateX(-50%); /* Se mueve la mitad para mantener el loop */
+        transform: translateX(-50%);
     }
 }
 
+/*CHATBOT*/
+
+#chatbot-container {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#chatbot-container:hover {
+    transform: scale(1.1);
+}
+
+#chatbot-button {
+    background-color: #004aad;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#chat-window {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    border: 1px solid #ccc;
+}
+
+#chat-header {
+    background-color: #00275a;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#close-chat {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#chat-body {
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    color: #333;
+}
+
+#chat-footer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#send-btn {
+    background-color: #004aad;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 5px;
+}
     </style>
+
 </head>
 <body>
     <!-- Navbar -->
@@ -339,6 +437,23 @@ footer {
             </ul>
         </div>
     </nav>
+
+    <!-- Botón flotante -->
+<div id="chatbot-container">
+    <button id="chatbot-button">Contáctanos</button>
+    <div id="chat-window" class="hidden">
+        <div id="chat-header">Chat de Atención <span id="close-chat">&times;</span></div>
+        <div id="chat-body">
+            <p>¡Hola! cuéntanos, ¿eres persona o empresa?</p>
+        </div>
+        <div id="chat-footer">
+            <input type="text" id="chat-input" placeholder="Escribe aquí...">
+            <button id="send-btn">Enviar</button>
+        </div>
+    </div>
+</div>
+
+    
 
 <!-- Carrusel con 2 imágenes y 1 video -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="4000">
@@ -420,14 +535,13 @@ footer {
     <h2 class="text-center">Nuestros Convenios</h2>
     <div class="carrusel2"> 
         <div class="carrusel2-track"> 
-            <!-- Imágenes originales -->
+            <!-- Imágenes -->
             <img src="{% static 'img/logo-integra.png' %}" alt="Integra">
             <img src="{% static 'img/logo-conosur.png' %}" alt="Conosur">
             <img src="{% static 'img/logo-bci.png' %}" alt="BCI">
             <img src="{% static 'img/logo-mineduc.png' %}" alt="Mineduc">
             <img src="{% static 'img/logo-ips.png' %}" alt="IPS">
 
-            <!-- Duplicamos las imágenes para que el loop funcione -->
             <img src="{% static 'img/logo-integra.png' %}" alt="Integra">
             <img src="{% static 'img/logo-conosur.png' %}" alt="Conosur">
             <img src="{% static 'img/logo-bci.png' %}" alt="BCI">
@@ -474,6 +588,42 @@ footer {
         <p>© 2020 Ópticas LCM - Todos los derechos reservados</p>
     </div>
 </footer>
+
+<script>
+    document.getElementById("chatbot-button").addEventListener("click", function() {
+        var chatWindow = document.getElementById("chat-window");
+        if (chatWindow.style.display === "none" || chatWindow.style.display === "") {
+            chatWindow.style.display = "flex";
+        } else {
+            chatWindow.style.display = "none";
+        }
+    });
+
+    document.getElementById("close-chat").addEventListener("click", function() {
+        document.getElementById("chat-window").style.display = "none";
+    });
+
+    document.getElementById("send-btn").addEventListener("click", function() {
+        var userInput = document.getElementById("chat-input").value.toLowerCase();
+        var chatBody = document.getElementById("chat-body");
+
+        chatBody.innerHTML += `<p><strong>Tú:</strong> ${userInput}</p>`;
+
+        if (userInput.includes("persona")) {
+            chatBody.innerHTML += `<p>Si necesitas una hora para evaluación optométrica o solucionar algún problema con alguno de nuestros productos escríbenos a nuestro <a href='https://wa.me/56988037117?text=¡Hola!%20Quisiera%20una%20evaluación%20optométrica%20o%20solucionar%20una%20inquietud:' target='_blank'>WhatsApp</a> o por correo a <a href="mailto:serviciosopticosintegrales.mt@gmail.com" onclick="window.open('mailto:serviciosopticosintegrales.mt@gmail.com'); return false;">serviciosopticosintegrales.mt@gmail.com</a></p>`;
+            chatBody.innerHTML += `<p>¡Estamos felices de poder ayudarte! 😊</p>`;
+        } else if (userInput.includes("empresa")) {
+            chatBody.innerHTML += `<p>Si necesitas conocer nuestros convenios, contáctanos a nuestro Whatssap <a href='https://wa.me/56988037117?text=¡Hola!%20Quisiera%20conocer%20sobre%20sus%20convenios%20para%20empresas:' target='_blank'>WhatsApp</a> o por correo a <a href="mailto:serviciosopticosintegrales.mt@gmail.com" onclick="window.open('mailto:serviciosopticosintegrales.mt@gmail.com'); return false;">serviciosopticosintegrales.mt@gmail.com</a></p>`;
+            chatBody.innerHTML += `<p>¡Estamos felices de poder entregarte toda la información necesaria para los convenios! 😊</p>`;
+        } else {
+            chatBody.innerHTML += `<p>No entendí tu respuesta. ¿Eres persona o empresa?</p>`;
+        }
+
+        document.getElementById("chat-input").value = "";
+        chatBody.scrollTop = chatBody.scrollHeight;
+    });
+</script>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
