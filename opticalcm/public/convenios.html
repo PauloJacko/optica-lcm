@@ -1,355 +1,171 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Inicio</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Convenios</title>
+
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* --- Estilos Globales --- */
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin-top: 150px;
-        }
-        
-        /* --- Estilos del Navbar --- */
-        .navbar {
-            background-color: rgba(255, 255, 255, 0.95); 
-            padding: 5px 10px;
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* Color y tamaño de los enlaces */
-        .navbar a {
-            color: #00275a !important; /* Azul Cobalto */
-            font-size: 18px;
-            font-weight: bold;
-        }
-        
-        /* Ajuste del Logo */
-        .navbar-brand img {
-            max-width: 150px; /* Mantiene compatibilidad con tus estilos previos */
-        }
-        
-        .navbar-logo {
-            height: 80px; /* Ajusta la altura del logo */
-            width: auto;
-        }
-        
-        /* Espaciado entre los elementos del Navbar */
-        .navbar-nav .nav-item {
-            margin-left: 20px;
-        }
-        
-        /* --- Estilos del Footer --- */
-        footer {
-            background-color: #00275a;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        
-        /* Contenedor principal en 3 columnas (modo escritorio) */
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            padding: 20px;
-            align-items: center;
-            text-align: center;
-        }
-        
-        /* --- Estilos del Footer --- */
-        footer {
-            background-color: #00275a;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-            font-size: 14px;
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* Contenedor principal en 3 columnas (modo escritorio) */
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            padding: 10px;
-            align-items: center;
-            text-align: center;
-        }
-        
-        /* Secciones del Footer */
-        .footer-section {
-            width: 30%; 
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* Estilo de los títulos en cada sección */
-        .footer-section h5 {
-            margin-bottom: 5px;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        
-        /* Estilo del contacto */
-        .contact-info p {
-            margin: 5px 0;
-        }
-        
-        /* Imagen de Instagram */
-        .instagram-logo {
-            width: 35px;
-            height: 35px;
-            transition: transform 0.3s ease;
-        }
-        
-        .instagram-logo:hover {
-            transform: scale(1.1);
-        }
-        
-        /* Estilo del mapa */
-        .map-frame {
-            width: 80%;
-            height: 180px;
-            border-radius: 10px;
-            border: none;
-            box-shadow: 0px 3px 6px rgba(255, 255, 255, 0.79);
-        }
-        
-        /* Línea divisoria */
-        .footer-line {
-            border: 0;
-            height: 1px;
-            background-color: white;
-            margin: 5px auto;
-            width: 80%;
-        }
-        
-        /* Sección inferior con la web y derechos reservados */
-        .footer-bottom {
-            text-align: center;
-            font-size: 12px;
-        }
-        
-        .footer-link {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        .contactisimo {
-            color: white;
-            text-decoration: none;
-            text-decoration-line: none;
-        }
-        
-        .contactisimo2 {
-            color: white;
-            text-decoration: none;
-            text-decoration-line: none;
-        }
-        
-        .contactisimo:hover {
-            transform: scale(1.1);
-        }
-        
-        .contactisimo2:hover {
-            transform: scale(1.1);
-        }
-        
-        /* RESPONSIVIDAD */
-        
-        /* Tablets (768px o menos) - 2 columnas */
-        @media (max-width: 768px) {
-            .footer-container {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .footer-section {
-                width: 45%; /* Dos columnas */
-                margin-bottom: 20px;
-            }
-        }
-        
-        /* Celulares (480px o menos) - 1 columna */
-        @media (max-width: 480px) {
-            .footer-section {
-                width: 100%; /* Una columna */
-            }
-        }
-        
-        /* --- Responsividad --- */
-        @media (max-width: 768px) {
-            /* Reducir tamaño del logo en móviles */
-            .navbar-brand img, .navbar-logo {
-                max-width: 120px;
-                height: auto;
-            }
-        
-            /* Alinear menú al centro en móviles */
-            .navbar-nav .nav-item {
-                margin-left: 0;
-                text-align: center;
-            }
-        }
 
-        .video-convenios {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            display: block;
-            margin: 80px auto 0; /* Ajusta el margen superior según la altura del navbar */
-        }
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 150px;
+}
 
-        /* Estilo para los botones de contacto */
-        .contact-buttons {
-            background-color: #f8f9fa;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding-top: 30px;  
-            padding-bottom: 30px;  
-        }
-        .contact-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 20px;
-            font-size: 16px;
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            text-align: center;
-            width: auto;
-            max-width: 300px;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .contact-button:hover {
-            transform: scale(1.2);
-            transition: transform 0.3s ease;
-            text-decoration: none;
-            }
-        
-        .email-button {
-            background-color: #c13584; /* Color personalizado para Gmail */
-        }
-        
-        .whatsapp-button {
-            background-color: #25d366; /* Color personalizado para WhatsApp */
-        }
-        
-        .contact-icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-            object-fit: contain;  /* Mantener la proporción de la imagen */
-        }
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 5px 10px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
 
+.navbar a {
+    color: #00275a !important;
+    font-size: 18px;
+    font-weight: bold;
+}
 
-        .contact-button img {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-        }
+.navbar-logo {
+    height: 80px;
+}
 
-    </style>
+.navbar-nav .nav-item {
+    margin-left: 20px;
+}
+
+.video-convenios {
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin: 80px auto 0;
+}
+
+/* BOTONES */
+.contact-buttons {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 0;
+}
+
+.contact-button {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.email-button { background-color: #c13584; }
+.whatsapp-button { background-color: #25d366; }
+
+.contact-button img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #00275a;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.footer-section {
+    width: 30%;
+}
+
+.instagram-logo {
+    width: 35px;
+}
+
+.map-frame {
+    width: 80%;
+    height: 180px;
+    border-radius: 10px;
+    border: none;
+}
+</style>
 </head>
+
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <a class="navbar-brand d-flex align-items-center" href="{% url 'inicio' %}">
-            <img src="{% static 'img/logo-lcm.png' %}" alt="Logo LCM" class="navbar-logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav ml-3">
-                <li class="nav-item">
-                    <a class="nav-link nav-text" href="{% url 'servicios' %}">Servicios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-text" href="{% url 'instructivos' %}">Guía de Uso</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-text" href="{% url 'quienes_somos' %}">Quiénes Somos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-text" href="{% url 'convenios' %}">Convenios</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
 
-    <video class="video-convenios" autoplay loop muted playsinline>
-        <source src="{% static 'img/video-convenios.mp4' %}" type="video/mp4">
-        Tu navegador no soporta videos en HTML5.
-    </video>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <a class="navbar-brand" href="index.html">
+        <img src="img/logo-lcm.png" class="navbar-logo">
+    </a>
 
-    <!-- Botones de contacto -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="instructivos.html">Guía de Uso</a></li>
+            <li class="nav-item"><a class="nav-link" href="quienes_somos.html">Quiénes Somos</a></li>
+            <li class="nav-item"><a class="nav-link" href="convenios.html">Convenios</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- VIDEO -->
+<video class="video-convenios" autoplay loop muted playsinline>
+    <source src="img/video-convenios.mp4" type="video/mp4">
+</video>
+
+<!-- BOTONES -->
 <div class="contact-buttons">
 
-    <a href="mailto:serviciosopticosintegrales.mt@gmail.com" class="contact-button email-button" target="_blank">
-        <img src="{% static 'img/logo-gmail.png' %}" alt="Gmail Logo" class="contact-icon"> 
-        Contactanos
+    <a href="mailto:serviciosopticosintegrales.mt@gmail.com" class="contact-button email-button">
+        <img src="img/logo-gmail.png"> Contactanos
     </a>
 
-    <a href="https://wa.me/56988037117?text=¡Hola!%20Me%20gustaría%20saber%20más%20sobre%20sus%20servicios." class="contact-button whatsapp-button" target="_blank">
-        <img src="{% static 'img/logo-ws.png' %}" alt="WhatsApp Logo" class="contact-icon">
-        Contactanos
+    <a href="https://wa.me/56988037117" class="contact-button whatsapp-button">
+        <img src="img/logo-ws.png"> Contactanos
     </a>
+
 </div>
 
+<!-- FOOTER -->
 <footer>
     <div class="footer-container">
-        <div class="footer-section contact-info">
-            <h5>CONTACTO:</h5>
+
+        <div class="footer-section">
+            <h5>CONTACTO</h5>
             <p>Mauricio Tapia Villarroel</p>
-            <p>Gerente General LCM</p>
-            WhatsApp: <a href="https://wa.me/56988037117?text=¡Hola!%20Me%20gustaría%20saber%20más%20sobre%20sus%20servicios." class="contactisimo2" target="_blank">+56 9 88037117</a>
-            Email: <a href="mailto:serviciosopticosintegrales.mt@gmail.com" class="contactisimo" target="_blank"> serviciosopticosintegrales.mt@gmail.com </a>
+            <p>+56 9 88037117</p>
         </div>
 
-        <div class="footer-section follow-us">
-            <h5>SÍGUENOS:</h5>
-            <a href="https://www.instagram.com/serviciosopticoslcm/" target="_blank">
-                <img src="{% static 'img/logo-instagram.png' %}" alt="Instagram" class="instagram-logo">
-            </a>
+        <div class="footer-section">
+            <h5>SÍGUENOS</h5>
+            <img src="img/logo-instagram.png" class="instagram-logo">
         </div>
 
-        <div class="footer-section map-container">
-            <h5>UBÍCANOS:</h5>
+        <div class="footer-section">
+            <h5>UBÍCANOS</h5>
             <p>Serrano 73, oficina 309</p>
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d294.257794437481!2d-70.64940881183381!3d-33.44547886606151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2scl!4v1739199358045!5m2!1ses-419!2scl"
-                class="map-frame"
-                allowfullscreen=""
-                loading="lazy">
-            </iframe>
         </div>
+
     </div>
 
-    <hr class="footer-line">
-
-    <!-- Parte inferior del footer -->
-    <div class="footer-bottom">
-        <p><a href="https://www.opticaslcm.cl" class="footer-link">www.opticaslcm.cl</a></p>
-        <p>© 2020 Ópticas LCM - Todos los derechos reservados</p>
-    </div>
+    <p>© 2020 Ópticas LCM</p>
 </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
