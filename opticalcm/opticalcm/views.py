@@ -11,3 +11,6 @@ def quienes_somos(request):
 
 def convenios(request):
     return render(request, 'convenios.html')
+
+def instructivos(request):
+    return render(request, 'instructivos.html')

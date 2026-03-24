@@ -1,0 +1,230 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Uso - Ópticas LCM</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin-top: 150px;
+            background-color: #f4f6f9;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: rgba(255,255,255,0.95);
+            padding: 5px 10px;
+            box-shadow: 0px 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .navbar a {
+            color: #00275a !important;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .navbar-logo {
+            max-width: 100px !important;
+        }
+
+        .navbar-nav .nav-item {
+            margin-left: 20px;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #00275a, #004aad);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+        }
+
+        /* SELECTOR */
+        .selector {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .selector h2 {
+            color: #00275a;
+            margin-bottom: 30px;
+        }
+
+        .option-btn {
+            background: white;
+            border: none;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px;
+            width: 200px;
+            box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .option-btn:hover {
+            transform: translateY(-5px);
+            background: #004aad;
+            color: white;
+        }
+
+        /* CONTENIDO DINÁMICO */
+        .guia-content {
+            margin-top: 40px;
+            display: none;
+        }
+
+        .guia-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.08);
+            border-left: 5px solid #004aad;
+        }
+
+        .guia-card h3 {
+            color: #00275a;
+            margin-bottom: 15px;
+        }
+
+        .guia-card p {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #00275a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .option-btn {
+                width: 100%;
+            }
+
+            .navbar-nav .nav-item {
+                margin-left: 0;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <a class="navbar-brand d-flex align-items-center" href="{% url 'inicio' %}">
+        <img src="{% static 'img/logo-lcm.png' %}" class="navbar-logo">
+    </a>
+
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav ml-3">
+            <li class="nav-item"><a class="nav-link" href="{% url 'servicios' %}">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'instructivos' %}">Guía de Uso</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'quienes_somos' %}">Quiénes Somos</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'convenios' %}">Convenios</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Guía de Uso de Lentes</h1>
+    <p>Selecciona el tipo de lente que utilizas y aprende cómo usarlo correctamente.</p>
+</section>
+
+<!-- SELECTOR -->
+<section class="selector container">
+    <h2>¿Qué tipo de lentes estás usando?</h2>
+
+    <button class="option-btn" onclick="mostrar('lejos')">👓 De Lejos</button>
+    <button class="option-btn" onclick="mostrar('cerca')">📖 De Cerca</button>
+    <button class="option-btn" onclick="mostrar('bifocal')">🔍 Bifocales</button>
+    <button class="option-btn" onclick="mostrar('multi')">✨ Multifocales</button>
+    <button class="option-btn" onclick="mostrar('cuidados')">🛠️ Cuidados</button>
+</section>
+
+<!-- CONTENIDO -->
+<section class="container">
+
+    <div id="lejos" class="guia-content">
+        <div class="guia-card">
+            <h3>Lentes de Lejos</h3>
+            <p>Se utilizan para mejorar la visión a distancia como conducir o ver televisión.</p>
+            <p>Dependiendo de la receta, su uso puede ser permanente o solo en ciertas actividades.</p>
+            <p>Es importante utilizarlos en situaciones donde necesites precisión visual para evitar fatiga ocular.</p>
+        </div>
+    </div>
+
+    <div id="cerca" class="guia-content">
+        <div class="guia-card">
+            <h3>Lentes de Cerca</h3>
+            <p>Diseñados para lectura, celular y computador.</p>
+            <p>No deben usarse al caminar o mirar a distancia.</p>
+            <p>Se recomienda descansar la vista periódicamente para evitar cansancio visual.</p>
+        </div>
+    </div>
+
+    <div id="bifocal" class="guia-content">
+        <div class="guia-card">
+            <h3>Lentes Bifocales</h3>
+            <p>Permiten ver de lejos y de cerca en un mismo lente.</p>
+            <p>Requieren adaptación inicial para acostumbrarse al cambio de enfoque.</p>
+            <p>Es importante aprender a posicionar la mirada correctamente.</p>
+        </div>
+    </div>
+
+    <div id="multi" class="guia-content">
+        <div class="guia-card">
+            <h3>Lentes Multifocales</h3>
+            <p>Permiten ver a todas las distancias sin cortes visibles.</p>
+            <p>Debes mover la cabeza para enfocar correctamente.</p>
+            <p>El periodo de adaptación puede durar algunos días.</p>
+        </div>
+    </div>
+
+    <div id="cuidados" class="guia-content">
+        <div class="guia-card">
+            <h3>Cuidados Generales</h3>
+            <p>Limpia tus lentes con paño de microfibra y soluciones adecuadas.</p>
+            <p>Evita limpiarlos con ropa o papel.</p>
+            <p>Guárdalos en estuche rígido y evita el calor excesivo.</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© Ópticas LCM</p>
+</footer>
+
+<script>
+function mostrar(id) {
+    document.querySelectorAll('.guia-content').forEach(el => el.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+}
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
