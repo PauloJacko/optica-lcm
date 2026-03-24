@@ -141,13 +141,137 @@
                 text-align: center;
             }
         }
+
+                /* --- Estilos del Footer --- */
+        footer {
+            background-color: #00275a;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 14px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Contenedor principal en 3 columnas (modo escritorio) */
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 10px;
+            align-items: center;
+            text-align: center;
+        }
+        
+        /* Secciones del Footer */
+        .footer-section {
+            width: 30%; 
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Estilo de los títulos en cada sección */
+        .footer-section h5 {
+            margin-bottom: 5px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        /* Estilo del contacto */
+        .contact-info p {
+            margin: 5px 0;
+        }
+        
+        /* Imagen de Instagram */
+        .instagram-logo {
+            width: 35px;
+            height: 35px;
+            transition: transform 0.3s ease;
+        }
+        
+        .instagram-logo:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Estilo del mapa */
+        .map-frame {
+            width: 80%;
+            height: 180px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0px 3px 6px rgba(255, 255, 255, 0.79);
+        }
+        
+        /* Línea divisoria */
+        .footer-line {
+            border: 0;
+            height: 1px;
+            background-color: white;
+            margin: 5px auto;
+            width: 80%;
+        }
+        
+        /* Sección inferior con la web y derechos reservados */
+        .footer-bottom {
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .contactisimo {
+            color: white;
+            text-decoration: none;
+            text-decoration-line: none;
+        }
+        
+        .contactisimo2 {
+            color: white;
+            text-decoration: none;
+            text-decoration-line: none;
+        }
+        
+        .contactisimo:hover {
+            transform: scale(1.1);
+        }
+        
+        .contactisimo2:hover {
+            transform: scale(1.1);
+        }
+        
+        /* RESPONSIVIDAD */
+        
+        /* Tablets (768px o menos) - 2 columnas */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .footer-section {
+                width: 45%; /* Dos columnas */
+                margin-bottom: 20px;
+            }
+        }
+        
+        /* Celulares (480px o menos) - 1 columna */
+        @media (max-width: 480px) {
+            .footer-section {
+                width: 100%; /* Una columna */
+            }
+        }
     </style>
 </head>
 
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <a class="navbar-brand d-flex align-items-center" href="{% url 'inicio' %}">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="img/logo-lcm.png" class="navbar-logo">
     </a>
 
@@ -255,8 +379,43 @@
 
 </section>
 
+    <!-- Footer -->
 <footer>
-    <p>© Ópticas LCM</p>
+    <div class="footer-container">
+        <div class="footer-section contact-info">
+            <h5>CONTACTO:</h5>
+            <p>Mauricio Tapia Villarroel</p>
+            <p>Gerente General LCM</p>
+            WhatsApp: <a href="https://wa.me/56988037117?text=¡Hola!%20Me%20gustaría%20saber%20más%20sobre%20sus%20servicios." class="contactisimo2" target="_blank">+56 9 88037117</a>
+            Email: <a href="mailto:serviciosopticosintegrales.mt@gmail.com" class="contactisimo" target="_blank"> serviciosopticosintegrales.mt@gmail.com </a>
+        </div>
+
+        <div class="footer-section follow-us">
+            <h5>SÍGUENOS:</h5>
+            <a href="https://www.instagram.com/serviciosopticoslcm/" target="_blank">
+                <img src="img/logo-instagram.png" alt="instagram" class="instagram-logo">
+            </a>
+        </div>
+
+        <div class="footer-section map-container">
+            <h5>UBÍCANOS:</h5>
+            <p>Serrano 73, oficina 309</p>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d294.257794437481!2d-70.64940881183381!3d-33.44547886606151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2scl!4v1739199358045!5m2!1ses-419!2scl"
+                class="map-frame"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+    <hr class="footer-line">
+
+    <!-- Parte inferior del footer -->
+    <div class="footer-bottom">
+        <p><a href="https://www.opticaslcm.cl" class="footer-link">www.opticaslcm.cl</a></p>
+        <p>© 2020 Ópticas LCM - Todos los derechos reservados</p>
+    </div>
 </footer>
 
 <script>
