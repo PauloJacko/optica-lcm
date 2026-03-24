@@ -48,31 +48,65 @@
 
         /* SELECTOR */
         .selector {
+            margin-top: 50px;
             text-align: center;
-            margin-top: 40px;
+            padding: 0 15px;
         }
 
         .selector h2 {
             color: #00275a;
             margin-bottom: 30px;
+            font-weight: 600;
         }
 
+        /* CONTENEDOR BOTONES */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* 🔥 clave para responsive */
+            gap: 15px;
+        }
+
+        /* BOTONES MODERNOS */
         .option-btn {
-            background: white;
+            background: rgba(255, 255, 255, 0.7);
             border: none;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 10px;
-            width: 200px;
-            box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
+            padding: 14px 22px;
+            border-radius: 50px; /* 🔥 pill shape */
+            font-weight: 500;
+            color: #00275a;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
             cursor: pointer;
         }
 
+        /* HOVER */
         .option-btn:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px) scale(1.03);
             background: #004aad;
             color: white;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        /* ACTIVO (cuando está abierto) */
+        .option-btn.active {
+            background: #004aad;
+            color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .btn-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .option-btn {
+                width: 100%;
+                text-align: center;
+            }
         }
 
         /* CONTENIDO DINÁMICO */
@@ -153,11 +187,13 @@
 <section class="selector container">
     <h2>¿Qué tipo de lentes estás usando?</h2>
 
-    <button class="option-btn" onclick="mostrar('lejos')">👓 De Lejos</button>
-    <button class="option-btn" onclick="mostrar('cerca')">📖 De Cerca</button>
-    <button class="option-btn" onclick="mostrar('bifocal')">🔍 Bifocales</button>
-    <button class="option-btn" onclick="mostrar('multi')">✨ Multifocales</button>
-    <button class="option-btn" onclick="mostrar('cuidados')">🛠️ Cuidados</button>
+    <div class="btn-group">
+        <button class="option-btn" onclick="mostrar('lejos')">👓 De Lejos</button>
+        <button class="option-btn" onclick="mostrar('cerca')">📖 De Cerca</button>
+        <button class="option-btn" onclick="mostrar('bifocal')">🔍 Bifocales</button>
+        <button class="option-btn" onclick="mostrar('multi')">✨ Multifocales</button>
+        <button class="option-btn" onclick="mostrar('cuidados')">🛠️ Cuidados</button>
+    </div>
 </section>
 
 <!-- CONTENIDO -->
@@ -165,60 +201,93 @@
 
     <div id="lejos" class="guia-content">
         <div class="guia-card">
-            <h3>Lentes de Lejos</h3>
-            <p>Se utilizan para mejorar la visión a distancia como conducir o ver televisión.</p>
-            <p>Dependiendo de la receta, su uso puede ser permanente o solo en ciertas actividades.</p>
-            <p>Es importante utilizarlos en situaciones donde necesites precisión visual para evitar fatiga ocular.</p>
+            <h3>Lentes Ópticos de Lejos</h3>
+            <ul>
+                <li><strong>Uso principal:</strong> recomendados para conducir, ver televisión y reconocer objetos a distancia.</li>
+                <li><strong>Frecuencia:</strong> pueden usarse solo en momentos específicos o durante todo el día, según indicación profesional.</li>
+                <li><strong>Adaptación:</strong> es normal notar mayor nitidez inmediatamente; si hay molestias, suelen desaparecer en pocos días.</li>
+                <li><strong>Recomendación:</strong> evita quitarlos y ponerlos constantemente para no forzar la vista.</li>
+            </ul>
         </div>
     </div>
 
     <div id="cerca" class="guia-content">
         <div class="guia-card">
             <h3>Lentes de Cerca</h3>
-            <p>Diseñados para lectura, celular y computador.</p>
-            <p>No deben usarse al caminar o mirar a distancia.</p>
-            <p>Se recomienda descansar la vista periódicamente para evitar cansancio visual.</p>
+            <ul>
+                <li><strong>Uso principal:</strong> diseñados para lectura, uso de celular y trabajo en computador.</li>
+                <li><strong>Postura:</strong> mantener una distancia adecuada (30–40 cm) mejora la comodidad visual.</li>
+                <li><strong>Importante:</strong> no se recomienda caminar o desplazarse con ellos puestos.</li>
+                <li><strong>Descanso visual:</strong> aplicar pausas cada 20 minutos ayuda a evitar fatiga ocular.</li>
+            </ul>
         </div>
     </div>
 
     <div id="bifocal" class="guia-content">
         <div class="guia-card">
             <h3>Lentes Bifocales</h3>
-            <p>Permiten ver de lejos y de cerca en un mismo lente.</p>
-            <p>Requieren adaptación inicial para acostumbrarse al cambio de enfoque.</p>
-            <p>Es importante aprender a posicionar la mirada correctamente.</p>
+            <ul>
+                <li><strong>Diseño:</strong> permiten ver de lejos en la parte superior y de cerca en la inferior.</li>
+                <li><strong>Uso correcto:</strong> bajar levemente la mirada para leer y mantener la cabeza estable.</li>
+                <li><strong>Adaptación:</strong> puede tomar algunos días acostumbrarse al cambio entre zonas.</li>
+                <li><strong>Consejo:</strong> utilizarlos de forma continua acelera la adaptación.</li>
+            </ul>
         </div>
     </div>
 
     <div id="multi" class="guia-content">
         <div class="guia-card">
             <h3>Lentes Multifocales</h3>
-            <p>Permiten ver a todas las distancias sin cortes visibles.</p>
-            <p>Debes mover la cabeza para enfocar correctamente.</p>
-            <p>El periodo de adaptación puede durar algunos días.</p>
+            <ul>
+                <li><strong>Función:</strong> permiten una visión continua a todas las distancias (lejos, intermedio y cerca).</li>
+                <li><strong>Movimiento:</strong> se recomienda mover la cabeza y no solo los ojos para enfocar correctamente.</li>
+                <li><strong>Adaptación:</strong> el proceso puede durar algunos días; es completamente normal.</li>
+                <li><strong>Uso:</strong> mientras más se utilicen, más rápida será la adaptación.</li>
+            </ul>
         </div>
     </div>
 
     <div id="cuidados" class="guia-content">
         <div class="guia-card">
             <h3>Cuidados Generales</h3>
-            <p>Limpia tus lentes con paño de microfibra y soluciones adecuadas.</p>
-            <p>Evita limpiarlos con ropa o papel.</p>
-            <p>Guárdalos en estuche rígido y evita el calor excesivo.</p>
+            <ul>
+                <li><strong>Limpieza:</strong> usar paño de microfibra y evitar limpiar con ropa o papel.</li>
+                <li><strong>Almacenamiento:</strong> guardar siempre en estuche rígido cuando no estén en uso.</li>
+                <li><strong>Temperatura:</strong> no exponer a calor extremo (tablero del auto, por ejemplo).</li>
+                <li><strong>Higiene:</strong> pueden lavarse con agua y jabón neutro para eliminar grasa o suciedad.</li>
+                <li><strong>Durabilidad:</strong> un buen cuidado prolonga la vida útil de los lentes y mantiene su calidad óptica.</li>
+            </ul>
         </div>
     </div>
 
 </section>
 
 <!-- FOOTER -->
+
 <footer>
     <p>© Ópticas LCM</p>
 </footer>
 
 <script>
 function mostrar(id) {
-    document.querySelectorAll('.guia-content').forEach(el => el.style.display = 'none');
-    document.getElementById(id).style.display = 'block';
+    const seleccionado = document.getElementById(id);
+    const botones = document.querySelectorAll('.option-btn');
+
+    if (seleccionado.style.display === 'block') {
+        seleccionado.style.display = 'none';
+        botones.forEach(btn => btn.classList.remove('active'));
+        return;
+    }
+
+    document.querySelectorAll('.guia-content').forEach(el => {
+        el.style.display = 'none';
+    });
+
+    botones.forEach(btn => btn.classList.remove('active'));
+
+    seleccionado.style.display = 'block';
+
+    event.target.classList.add('active');
 }
 </script>
 
