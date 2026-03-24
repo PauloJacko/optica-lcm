@@ -7,36 +7,317 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Poppins', sans-serif; margin-top: 150px; }
-        .navbar { background-color: rgba(255,255,255,0.95); padding:5px 10px; box-shadow:0 6px 12px rgba(0,0,0,.2); }
-        .navbar a { color:#00275a !important; font-size:18px; font-weight:bold; }
-        .navbar-logo { height:80px; width:auto; }
-        .navbar-nav .nav-item { margin-left:20px; }
+        /* --- Estilos Globales --- */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin-top: 150px;
+        }
+        
+        /* --- Estilos del Navbar --- */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95); 
+            padding: 5px 10px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Color y tamaño de los enlaces */
+        .navbar a {
+            color: #00275a !important; /* Azul Cobalto */
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        /* Ajuste del Logo */
+        .navbar-brand img {
+            max-width: 150px; /* Mantiene compatibilidad con tus estilos previos */
+        }
+        
+        .navbar-logo {
+            height: 80px; /* Ajusta la altura del logo */
+            width: auto;
+        }
+        
+        /* Espaciado entre los elementos del Navbar */
+        .navbar-nav .nav-item {
+            margin-left: 20px;
+        }
+        
+        /* --- Estilos del Footer --- */
+        footer {
+            background-color: #00275a;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 14px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Contenedor principal en 3 columnas (modo escritorio) */
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 10px;
+            align-items: center;
+            text-align: center;
+        }
+        
+        /* Secciones del Footer */
+        .footer-section {
+            width: 30%; 
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Estilo de los títulos en cada sección */
+        .footer-section h5 {
+            margin-bottom: 5px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        /* Estilo del contacto */
+        .contact-info p {
+            margin: 5px 0;
+        }
+        
+        /* Imagen de Instagram */
+        .instagram-logo {
+            width: 35px;
+            height: 35px;
+            transition: transform 0.3s ease;
+        }
+        
+        .instagram-logo:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Estilo del mapa */
+        .map-frame {
+            width: 80%;
+            height: 180px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0px 3px 6px rgba(255, 255, 255, 0.79);
+        }
+        
+        /* Línea divisoria */
+        .footer-line {
+            border: 0;
+            height: 1px;
+            background-color: white;
+            margin: 5px auto;
+            width: 80%;
+        }
+        
+        /* Sección inferior con la web y derechos reservados */
+        .footer-bottom {
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .contactisimo {
+            color: white;
+            text-decoration: none;
+            text-decoration-line: none;
+        }
+        
+        .contactisimo2 {
+            color: white;
+            text-decoration: none;
+            text-decoration-line: none;
+        }
+        
+        .contactisimo:hover {
+            transform: scale(1.1);
+        }
+        
+        .contactisimo2:hover {
+            transform: scale(1.1);
+        }
+        
+        /* RESPONSIVIDAD */
+        
+        /* Tablets (768px o menos) - 2 columnas */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .footer-section {
+                width: 45%; /* Dos columnas */
+                margin-bottom: 20px;
+            }
+        }
+        
+        /* Celulares (480px o menos) - 1 columna */
+        @media (max-width: 480px) {
+            .footer-section {
+                width: 100%; /* Una columna */
+            }
+        }
+        
+        /* --- Responsividad --- */
+        @media (max-width: 768px) {
+            /* Reducir tamaño del logo en móviles */
+            .navbar-brand img, .navbar-logo {
+                max-width: 120px;
+                height: auto;
+            }
+        
+            /* Alinear menú al centro en móviles */
+            .navbar-nav .nav-item {
+                margin-left: 0;
+                text-align: center;
+            }
+        
+        }
 
-        footer { background:#00275a; color:#fff; padding:10px 0; text-align:center; font-size:14px; box-shadow:0 6px 12px rgba(0,0,0,.2); }
-        .footer-container { display:flex; justify-content:space-between; flex-wrap:wrap; padding:10px; align-items:center; }
-        .footer-section { width:30%; padding:10px; display:flex; flex-direction:column; align-items:center; }
-        .instagram-logo { width:35px; height:35px; }
-        .map-frame { width:80%; height:180px; border-radius:10px; border:none; }
-        .footer-line { height:1px; background:#fff; margin:5px auto; width:80%; }
+        .servicios-container {
+            padding: 60px 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #0c3a4d;
+        }
+        
+        .servicio {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .servicio.reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .servicio-text {
+            flex: 1;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .servicio-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            color: #0056b3;
+        }
 
-        .servicios-container { padding:60px 20px; background:#f8f9fa; }
-        .section-title { font-size:2.5rem; font-weight:bold; margin-bottom:40px; color:#0c3a4d; }
+        .servicio-text h5 {
+            font-size: 0.5rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        
+        .servicio-text p,
+        .servicio-text ul {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .servicio-text ul {
+            padding-left: 20px;
+        }
+        
+        .servicio-img {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .servicio-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Estilo de la garantía */
+        .nota-garantia {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #ff0000;
+        }
+        
+        /* RESPONSIVIDAD */
+        @media (max-width: 768px) {
+            .servicio {
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .servicio.reverse {
+                flex-direction: column;
+            }
+        }
 
-        .servicio { display:flex; align-items:center; gap:40px; margin-bottom:60px; }
-        .servicio.reverse { flex-direction:row-reverse; }
+        /* Estilo para los botones de contacto */
+        .contact-buttons {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding-top: 30px;  
+            padding-bottom: 30px;  
+        }
+        .contact-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            font-size: 16px;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            width: auto;
+            max-width: 300px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-button:hover {
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            }
+        
+        .email-button {
+            background-color: #c13584; 
+        }
+        
+        .whatsapp-button {
+            background-color: #25d366;
+        }
+        
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            object-fit: contain; 
+        }
 
-        .servicio-text { flex:1; padding:20px; background:#fff; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,.1); }
-        .servicio-img img { max-width:100%; border-radius:10px; }
 
-        .contact-buttons { display:flex; justify-content:center; gap:20px; padding:30px; }
-        .contact-button { display:flex; align-items:center; padding:12px 20px; color:white; border-radius:8px; text-decoration:none; }
-        .email-button { background:#c13584; }
-        .whatsapp-button { background:#25d366; }
-        .contact-icon { width:24px; margin-right:10px; }
-
-        @media (max-width:768px){
-            .servicio{flex-direction:column; text-align:center;}
+        .contact-button img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
         }
     </style>
 </head>
