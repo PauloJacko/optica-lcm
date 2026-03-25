@@ -1,47 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
         /* --- Estilos Globales --- */
         body {
             font-family: 'Poppins', sans-serif;
             margin-top: 150px;
         }
-        
+
         /* --- Estilos del Navbar --- */
         .navbar {
-            background-color: rgba(255, 255, 255, 0.95); 
+            background-color: rgba(255, 255, 255, 0.95);
             padding: 5px 10px;
             box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
         }
-        
-        /* Color y tamaño de los enlaces */
+
         .navbar a {
-            color: #00275a !important; /* Azul Cobalto */
+            color: #00275a !important;
             font-size: 18px;
             font-weight: bold;
         }
-        
-        /* Ajuste del Logo */
+
         .navbar-brand img {
-            max-width: 150px; /* Mantiene compatibilidad con tus estilos previos */
+            max-width: 150px;
         }
-        
+
         .navbar-logo {
-            height: 80px; /* Ajusta la altura del logo */
+            height: 80px;
             width: auto;
         }
-        
-        /* Espaciado entre los elementos del Navbar */
+
         .navbar-nav .nav-item {
             margin-left: 20px;
         }
-        
+
         /* --- Estilos del Footer --- */
         footer {
             background-color: #00275a;
@@ -51,8 +50,7 @@
             font-size: 14px;
             box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
         }
-        
-        /* Contenedor principal en 3 columnas (modo escritorio) */
+
         .footer-container {
             display: flex;
             justify-content: space-between;
@@ -61,41 +59,36 @@
             align-items: center;
             text-align: center;
         }
-        
-        /* Secciones del Footer */
+
         .footer-section {
-            width: 30%; 
+            width: 30%;
             padding: 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
-        
-        /* Estilo de los títulos en cada sección */
+
         .footer-section h5 {
             margin-bottom: 5px;
             font-size: 16px;
             font-weight: bold;
         }
-        
-        /* Estilo del contacto */
+
         .contact-info p {
             margin: 5px 0;
         }
-        
-        /* Imagen de Instagram */
+
         .instagram-logo {
             width: 35px;
             height: 35px;
             transition: transform 0.3s ease;
         }
-        
+
         .instagram-logo:hover {
             transform: scale(1.1);
         }
-        
-        /* Estilo del mapa */
+
         .map-frame {
             width: 80%;
             height: 180px;
@@ -103,8 +96,7 @@
             border: none;
             box-shadow: 0px 3px 6px rgba(255, 255, 255, 0.79);
         }
-        
-        /* Línea divisoria */
+
         .footer-line {
             border: 0;
             height: 1px;
@@ -112,99 +104,97 @@
             margin: 5px auto;
             width: 80%;
         }
-        
-        /* Sección inferior con la web y derechos reservados */
+
         .footer-bottom {
             text-align: center;
             font-size: 12px;
         }
-        
+
         .footer-link {
             color: white;
             text-decoration: none;
             font-weight: bold;
         }
-        
+
         .contactisimo {
             color: white;
             text-decoration: none;
             text-decoration-line: none;
         }
-        
+
         .contactisimo2 {
             color: white;
             text-decoration: none;
             text-decoration-line: none;
         }
-        
+
         .contactisimo:hover {
             transform: scale(1.1);
         }
-        
+
         .contactisimo2:hover {
             transform: scale(1.1);
         }
-        
+
         /* RESPONSIVIDAD */
-        
-        /* Tablets (768px o menos) - 2 columnas */
+
         @media (max-width: 768px) {
             .footer-container {
                 flex-wrap: wrap;
                 justify-content: center;
             }
+
             .footer-section {
-                width: 45%; /* Dos columnas */
+                width: 45%;
                 margin-bottom: 20px;
             }
         }
-        
-        /* Celulares (480px o menos) - 1 columna */
+
         @media (max-width: 480px) {
             .footer-section {
-                width: 100%; /* Una columna */
+                width: 100%;
             }
         }
-        
+
         /* --- Responsividad --- */
         @media (max-width: 768px) {
-            /* Reducir tamaño del logo en móviles */
-            .navbar-brand img, .navbar-logo {
+
+            .navbar-brand img,
+            .navbar-logo {
                 max-width: 120px;
                 height: auto;
             }
-        
-            /* Alinear menú al centro en móviles */
+
             .navbar-nav .nav-item {
                 margin-left: 0;
                 text-align: center;
             }
-        
+
         }
 
         .servicios-container {
             padding: 60px 20px;
             background-color: #f8f9fa;
         }
-        
+
         .section-title {
             font-size: 2.5rem;
             font-weight: bold;
             margin-bottom: 40px;
             color: #0c3a4d;
         }
-        
+
         .servicio {
             display: flex;
             align-items: center;
             gap: 40px;
             margin-bottom: 60px;
         }
-        
+
         .servicio.reverse {
             flex-direction: row-reverse;
         }
-        
+
         .servicio-text {
             flex: 1;
             padding: 20px;
@@ -212,7 +202,7 @@
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         .servicio-text h3 {
             font-size: 1.8rem;
             margin-bottom: 5px;
@@ -224,58 +214,57 @@
             margin-bottom: 30px;
             font-weight: bold;
         }
-        
+
         .servicio-text p,
         .servicio-text ul {
             font-size: 1rem;
             line-height: 1.6;
             color: #333;
         }
-        
+
         .servicio-text ul {
             padding-left: 20px;
         }
-        
+
         .servicio-img {
             flex: 1;
             text-align: center;
         }
-        
+
         .servicio-img img {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
-        
-        /* Estilo de la garantía */
+
         .nota-garantia {
             font-size: 0.9rem;
             font-style: italic;
             color: #ff0000;
         }
-        
+
         /* RESPONSIVIDAD */
         @media (max-width: 768px) {
             .servicio {
                 flex-direction: column;
                 text-align: center;
             }
-        
+
             .servicio.reverse {
                 flex-direction: column;
             }
         }
 
-        /* Estilo para los botones de contacto */
         .contact-buttons {
             background-color: #f8f9fa;
             display: flex;
             justify-content: center;
             gap: 20px;
-            padding-top: 30px;  
-            padding-bottom: 30px;  
+            padding-top: 30px;
+            padding-bottom: 30px;
         }
+
         .contact-button {
             display: flex;
             align-items: center;
@@ -291,26 +280,26 @@
             transition: background-color 0.3s ease;
             box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
         }
-        
+
         .contact-button:hover {
             transform: scale(1.2);
             transition: transform 0.3s ease;
             text-decoration: none;
-            }
-        
-        .email-button {
-            background-color: #c13584; 
         }
-        
+
+        .email-button {
+            background-color: #c13584;
+        }
+
         .whatsapp-button {
             background-color: #25d366;
         }
-        
+
         .contact-icon {
             width: 24px;
             height: 24px;
             margin-right: 10px;
-            object-fit: contain; 
+            object-fit: contain;
         }
 
 
@@ -324,12 +313,13 @@
 
 <body>
 
-<!-- NAVBAR -->
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <a class="navbar-brand d-flex align-items-center" href="index.html">
             <img src="img/logo-lcm.png" alt="Logo LCM" class="navbar-logo">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -339,7 +329,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-text" href="instructivos.html">Guía de Uso</a>
-                </li>                
+                </li>
                 <li class="nav-item">
                     <a class="nav-link nav-text" href="quienes_somos.html">Quiénes Somos</a>
                 </li>
@@ -351,137 +341,151 @@
     </nav>
 
     <!-- Contenido de la página de servicios -->
-<section class="servicios-container">
-    <div class="container">
-        <h2 class="text-center section-title">Nuestros Servicios</h2>
+    <section class="servicios-container">
+        <div class="container">
+            <h2 class="text-center section-title">Nuestros Servicios</h2>
 
-        <!-- Sección: Atención Oftalmológica -->
-        <div class="servicio">
-            <div class="servicio-text">
-                <h3>Atención Oftalmológica</h3>
-                <h5>Orientada a empresas e instituciones en terreno</h5>
-                <p><strong>Anamnesis Médica:</strong> Evaluación clínica del paciente.</p>
-                <p><strong>Autorefractometría:</strong> Examen preliminar para detectar problemas de refracción como Miopía, Astigmatismo e Hipermetropía.</p>
-                <p><strong>Medición de Agudeza Visual:</strong> Realizada por un Tecnólogo Médico Universitario, determinando la receta óptica final.</p>
-                <p><strong>Exámenes Específicos:</strong> Incluyen presión ocular, oftalmoscopía y test de Schirmer (evaluación de ojo seco).</p>
-                <p><strong>Entrega de Informe Clínico:</strong> Con los resultados y recomendaciones personalizadas.</p>
+            <!-- Sección: Atención Oftalmológica -->
+            <div class="servicio">
+                <div class="servicio-text">
+                    <h3>Atención Oftalmológica</h3>
+                    <h5>Orientada a empresas e instituciones en terreno</h5>
+                    <p><strong>Anamnesis Médica:</strong> Evaluación clínica del paciente.</p>
+                    <p><strong>Autorefractometría:</strong> Examen preliminar para detectar problemas de refracción como
+                        Miopía, Astigmatismo e Hipermetropía.</p>
+                    <p><strong>Medición de Agudeza Visual:</strong> Realizada por un Tecnólogo Médico Universitario,
+                        determinando la receta óptica final.</p>
+                    <p><strong>Exámenes Específicos:</strong> Incluyen presión ocular, oftalmoscopía y test de Schirmer
+                        (evaluación de ojo seco).</p>
+                    <p><strong>Entrega de Informe Clínico:</strong> Con los resultados y recomendaciones personalizadas.
+                    </p>
+                </div>
+                <div class="servicio-img">
+                    <img src="img/servicio1.jpg" alt="Atención oftalmológica">
+                </div>
             </div>
-            <div class="servicio-img">
-                <img src="img/servicio1.jpg" alt="Atención oftalmológica">
+
+            <!-- Sección: Evaluaciones Complementarias -->
+            <div class="servicio reverse">
+                <div class="servicio-text">
+                    <h3>Evaluaciones Complementarias</h3>
+                    <p>Dirigidas a personas mayores de 40 años y pacientes con enfermedades crónicas como diabetes o
+                        hipertensión.</p>
+                    <ul>
+                        <li><strong>Toma de presión ocular:</strong> Importante para detectar glaucoma en personas con
+                            antecedentes familiares.</li>
+                        <li><strong>Examen de Rojo Pupilar + AV SC:</strong> Para descartar sospecha de cataratas.</li>
+                        <li><strong>Evaluación del síndrome de “Ojo Seco”:</strong> Incluye set de lágrimas artificiales
+                            de bajo costo.</li>
+                        <li><strong>Oftalmoscopía directa:</strong> Observación del fondo de ojo para descartar
+                            patologías visuales.</li>
+                    </ul>
+                </div>
+                <div class="servicio-img">
+                    <img src="img/servicio2.jpeg" alt="Evaluaciones complementarias">
+                </div>
+            </div>
+
+            <!-- Sección: Asesoramiento Óptico -->
+            <div class="servicio">
+                <div class="servicio-text">
+                    <h3>Asesoramiento Óptico</h3>
+                    <p>Contamos con un óptico profesional que guiará a cada paciente en la selección de cristales y
+                        armazones adecuados.</p>
+                    <ul>
+                        <li>Evaluación de la mejor opción óptica según la receta.</li>
+                        <li>Asesoría estética y técnica en la elección del armazón.</li>
+                        <li>Proceso integral para facilitar la compra del lente óptico.</li>
+                    </ul>
+                </div>
+                <div class="servicio-img">
+                    <img src="img/servicio3.jpg" alt="Asesoramiento óptico">
+                </div>
+            </div>
+
+            <!-- Sección: Entrega del Producto y Post-Venta -->
+            <div class="servicio reverse">
+                <div class="servicio-text">
+                    <h3>Entrega del Producto y Post-Venta</h3>
+                    <p>Antes de la entrega, verificamos que el paciente reciba una atención completa:</p>
+                    <ul>
+                        <li>Comprobación de agudeza visual.</li>
+                        <li>Ajuste y comodidad del lente.</li>
+                        <li>Explicación del uso y cuidado adecuado.</li>
+                        <li>Inducción sobre la ametropía refractiva del paciente.</li>
+                        <li>Entrega de documentos para reembolso (boletas, recetas, etc.).</li>
+                    </ul>
+                    <h4>Garantía de Nuestros Productos</h4>
+                    <p>Todos nuestros productos cuentan con una garantía de hasta <strong>6 meses</strong> en casos de
+                        defectos de material o fabricación.</p>
+                    <p class="nota-garantia">La garantía no cubre daños por mal uso, pero ofrecemos asesoría técnica y
+                        descuentos en reparaciones.</p>
+                </div>
+                <div class="servicio-img">
+                    <img src="img/servicio4.png" alt="Entrega de producto y post-venta">
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Sección: Evaluaciones Complementarias -->
-        <div class="servicio reverse">
-            <div class="servicio-text">
-                <h3>Evaluaciones Complementarias</h3>
-                <p>Dirigidas a personas mayores de 40 años y pacientes con enfermedades crónicas como diabetes o hipertensión.</p>
-                <ul>
-                    <li><strong>Toma de presión ocular:</strong> Importante para detectar glaucoma en personas con antecedentes familiares.</li>
-                    <li><strong>Examen de Rojo Pupilar + AV SC:</strong> Para descartar sospecha de cataratas.</li>
-                    <li><strong>Evaluación del síndrome de “Ojo Seco”:</strong> Incluye set de lágrimas artificiales de bajo costo.</li>
-                    <li><strong>Oftalmoscopía directa:</strong> Observación del fondo de ojo para descartar patologías visuales.</li>
-                </ul>
-            </div>
-            <div class="servicio-img">
-                <img src="img/servicio2.jpeg" alt="Evaluaciones complementarias">
-            </div>
-        </div>
+    <!-- Botones de contacto -->
+    <div class="contact-buttons">
 
-        <!-- Sección: Asesoramiento Óptico -->
-        <div class="servicio">
-            <div class="servicio-text">
-                <h3>Asesoramiento Óptico</h3>
-                <p>Contamos con un óptico profesional que guiará a cada paciente en la selección de cristales y armazones adecuados.</p>
-                <ul>
-                    <li>Evaluación de la mejor opción óptica según la receta.</li>
-                    <li>Asesoría estética y técnica en la elección del armazón.</li>
-                    <li>Proceso integral para facilitar la compra del lente óptico.</li>
-                </ul>
-            </div>
-            <div class="servicio-img">
-                <img src="img/servicio3.jpg" alt="Asesoramiento óptico">
-            </div>
-        </div>
+        <a href="mailto:serviciosopticosintegrales.mt@gmail.com" class="contact-button email-button" target="_blank">
+            <img src="img/logo-gmail.png" alt="Gmail Logo" class="contact-icon">
+            Contactanos
+        </a>
 
-        <!-- Sección: Entrega del Producto y Post-Venta -->
-        <div class="servicio reverse">
-            <div class="servicio-text">
-                <h3>Entrega del Producto y Post-Venta</h3>
-                <p>Antes de la entrega, verificamos que el paciente reciba una atención completa:</p>
-                <ul>
-                    <li>Comprobación de agudeza visual.</li>
-                    <li>Ajuste y comodidad del lente.</li>
-                    <li>Explicación del uso y cuidado adecuado.</li>
-                    <li>Inducción sobre la ametropía refractiva del paciente.</li>
-                    <li>Entrega de documentos para reembolso (boletas, recetas, etc.).</li>
-                </ul>
-                <h4>Garantía de Nuestros Productos</h4>
-                <p>Todos nuestros productos cuentan con una garantía de hasta <strong>6 meses</strong> en casos de defectos de material o fabricación.</p>
-                <p class="nota-garantia">La garantía no cubre daños por mal uso, pero ofrecemos asesoría técnica y descuentos en reparaciones.</p>
-            </div>
-            <div class="servicio-img">
-                <img src="img/servicio4.png" alt="Entrega de producto y post-venta">
-            </div>
-        </div>
+        <a href="https://wa.me/56988037117?text=¡Hola!%20Me%20gustaría%20saber%20más%20sobre%20sus%20servicios."
+            class="contact-button whatsapp-button" target="_blank">
+            <img src="img/logo-ws.png" alt="WhatsApp Logo" class="contact-icon">
+            Contactanos
+        </a>
     </div>
-</section>
-
-<!-- Botones de contacto -->
-<div class="contact-buttons">
-
-    <a href="mailto:serviciosopticosintegrales.mt@gmail.com" class="contact-button email-button" target="_blank">
-        <img src="img/logo-gmail.png" alt="Gmail Logo" class="contact-icon"> 
-        Contactanos
-    </a>
-
-    <a href="https://wa.me/56988037117?text=¡Hola!%20Me%20gustaría%20saber%20más%20sobre%20sus%20servicios." class="contact-button whatsapp-button" target="_blank">
-        <img src="img/logo-ws.png" alt="WhatsApp Logo" class="contact-icon">
-        Contactanos
-    </a>
-</div>
 
     <!-- Footer -->
-<footer>
-    <div class="footer-container">
-        <div class="footer-section contact-info">
-            <h5>CONTACTO:</h5>
-            <p>Mauricio Tapia Villarroel</p>
-            <p>Gerente General LCM</p>
-            WhatsApp: <a href="https://wa.me/56988037117?text=¡Hola!%20Me%20gustaría%20saber%20más%20sobre%20sus%20servicios." class="contactisimo2" target="_blank">+56 9 88037117</a>
-            Email: <a href="mailto:serviciosopticosintegrales.mt@gmail.com" class="contactisimo" target="_blank"> serviciosopticosintegrales.mt@gmail.com </a>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section contact-info">
+                <h5>CONTACTO:</h5>
+                <p>Mauricio Tapia Villarroel</p>
+                <p>Gerente General LCM</p>
+                WhatsApp: <a
+                    href="https://wa.me/56988037117?text=¡Hola!%20Me%20gustaría%20saber%20más%20sobre%20sus%20servicios."
+                    class="contactisimo2" target="_blank">+56 9 88037117</a>
+                Email: <a href="mailto:serviciosopticosintegrales.mt@gmail.com" class="contactisimo" target="_blank">
+                    serviciosopticosintegrales.mt@gmail.com </a>
+            </div>
+
+            <div class="footer-section follow-us">
+                <h5>SÍGUENOS:</h5>
+                <a href="https://www.instagram.com/serviciosopticoslcm/" target="_blank">
+                    <img src="img/logo-instagram.png" alt="instagram" class="instagram-logo">
+                </a>
+            </div>
+
+            <div class="footer-section map-container">
+                <h5>UBÍCANOS:</h5>
+                <p>Serrano 73, oficina 309</p>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d294.257794437481!2d-70.64940881183381!3d-33.44547886606151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2scl!4v1739199358045!5m2!1ses-419!2scl"
+                    class="map-frame" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
         </div>
 
-        <div class="footer-section follow-us">
-            <h5>SÍGUENOS:</h5>
-            <a href="https://www.instagram.com/serviciosopticoslcm/" target="_blank">
-                <img src="img/logo-instagram.png" alt="instagram" class="instagram-logo">
-            </a>
+        <hr class="footer-line">
+
+        <!-- Parte inferior del footer -->
+        <div class="footer-bottom">
+            <p><a href="https://www.opticaslcm.cl" class="footer-link">www.opticaslcm.cl</a></p>
+            <p>© 2020 Ópticas LCM - Todos los derechos reservados</p>
         </div>
+    </footer>
 
-        <div class="footer-section map-container">
-            <h5>UBÍCANOS:</h5>
-            <p>Serrano 73, oficina 309</p>
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d294.257794437481!2d-70.64940881183381!3d-33.44547886606151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2scl!4v1739199358045!5m2!1ses-419!2scl"
-                class="map-frame"
-                allowfullscreen=""
-                loading="lazy">
-            </iframe>
-        </div>
-    </div>
-
-    <hr class="footer-line">
-
-    <!-- Parte inferior del footer -->
-    <div class="footer-bottom">
-        <p><a href="https://www.opticaslcm.cl" class="footer-link">www.opticaslcm.cl</a></p>
-        <p>© 2020 Ópticas LCM - Todos los derechos reservados</p>
-    </div>
-</footer>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>

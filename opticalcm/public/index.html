@@ -1,466 +1,463 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Inicio</title>
+
+    <!-- SEO BÁSICO -->
+    <title>Ópticas LCM | Servicios ópticos en terreno en Chile</title>
+    <meta name="description"
+        content="Servicios ópticos en terreno para empresas y personas. Exámenes visuales, entrega de lentes ópticos y atención profesional en todo Chile.">
+    <meta name="keywords"
+        content="óptica, lentes ópticos, examen visual, óptica en terreno, lentes Chile, servicios ópticos empresas">
+    <meta name="author" content="Ópticas LCM">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="CL-RM">
+    <meta name="geo.placename" content="Santiago">
+    <meta name="geo.position" content="-33.445478;-70.649409">
+    <meta property="og:title" content="Ópticas LCM | Servicios ópticos en terreno">
+    <meta property="og:description"
+        content="Exámenes visuales y entrega de lentes en terreno para empresas y personas.">
+    <meta property="og:image" content="https://www.serviciosopticoslcm.cl/img/logo-lcm.png">
+    <meta property="og:url" content="https://www.serviciosopticoslcm.cl">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="canonical" href="https://www.serviciosopticoslcm.cl">
+    <link rel="icon" href="img/logo-lcm.png" type="image/png">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <style>
         /* --- Estilos Globales --- */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin-top: 150px;
-}
-/* --- Estilos del Navbar --- */
-.navbar {
-    background-color: rgba(255, 255, 255, 0.95); 
-    padding: 5px 10px;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin-top: 150px;
+        }
 
-/* Color y tamaño de los enlaces */
-.navbar a {
-    color: #00275a !important; 
-    font-size: 18px;
-    font-weight: bold;
-}
+        /* --- Estilos del Navbar --- */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 5px 10px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
 
-/* Ajuste del Logo */
-.navbar-brand img, .navbar-logo {
-    max-width: 100px !important; 
-    height: auto !important; 
-}
+        .navbar a {
+            color: #00275a !important;
+            font-size: 18px;
+            font-weight: bold;
+        }
 
-/* Espaciado entre los elementos del Navbar */
-.navbar-nav .nav-item {
-    margin-left: 20px;
-}
+        .navbar-brand img,
+        .navbar-logo {
+            max-width: 100px !important;
+            height: auto !important;
+        }
 
-/* Asegurarse de que el navbar no aumente su tamaño */
-.navbar-collapse {
-    padding: 0;
-}
+        .navbar-nav .nav-item {
+            margin-left: 20px;
+        }
 
-/* --- Estilos del Footer --- */
-footer {
-    background-color: #00275a;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-    font-size: 14px;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-}
+        .navbar-collapse {
+            padding: 0;
+        }
 
-/* Contenedor principal en 3 columnas (modo escritorio) */
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 10px;
-    align-items: center;
-    text-align: center;
-}
+        /* --- Estilos del Footer --- */
+        footer {
+            background-color: #00275a;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 14px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
 
-/* Secciones del Footer */
-.footer-section {
-    width: 30%; 
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 10px;
+            align-items: center;
+            text-align: center;
+        }
 
-/* Estilo de los títulos en cada sección */
-.footer-section h5 {
-    margin-bottom: 5px;
-    font-size: 16px;
-    font-weight: bold;
-}
+        .footer-section {
+            width: 30%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-/* Estilo del contacto */
-.contact-info p {
-    margin: 5px 0;
-}
+        .footer-section h5 {
+            margin-bottom: 5px;
+            font-size: 16px;
+            font-weight: bold;
+        }
 
-/* Imagen de Instagram */
-.instagram-logo {
-    width: 35px;
-    height: 35px;
-    transition: transform 0.3s ease;
-}
+        .contact-info p {
+            margin: 5px 0;
+        }
 
-.instagram-logo:hover {
-    transform: scale(1.1);
-}
+        .instagram-logo {
+            width: 35px;
+            height: 35px;
+            transition: transform 0.3s ease;
+        }
 
-/* Estilo del mapa */
-.map-frame {
-    width: 80%;
-    height: 180px;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0px 3px 6px rgba(255, 255, 255, 0.79);
-}
+        .instagram-logo:hover {
+            transform: scale(1.1);
+        }
 
-/* Línea divisoria */
-.footer-line {
-    border: 0;
-    height: 1px;
-    background-color: white;
-    margin: 5px auto;
-    width: 80%;
-}
+        .map-frame {
+            width: 80%;
+            height: 180px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0px 3px 6px rgba(255, 255, 255, 0.79);
+        }
 
-/* Sección inferior con la web y derechos reservados */
-.footer-bottom {
-    text-align: center;
-    font-size: 12px;
-}
+        .footer-line {
+            border: 0;
+            height: 1px;
+            background-color: white;
+            margin: 5px auto;
+            width: 80%;
+        }
 
-.footer-link {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
+        .footer-bottom {
+            text-align: center;
+            font-size: 12px;
+        }
 
-.contactisimo {
-    color: white;
-    text-decoration: none;
-    text-decoration-line: none;
-}
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-.contactisimo2 {
-    color: white;
-    text-decoration: none;
-    text-decoration-line: none;
-}
+        .contactisimo {
+            color: white;
+            text-decoration: none;
+            text-decoration-line: none;
+        }
 
-.contactisimo:hover {
-    transform: scale(1.1);
-}
+        .contactisimo2 {
+            color: white;
+            text-decoration: none;
+            text-decoration-line: none;
+        }
 
-.contactisimo2:hover {
-    transform: scale(1.1);
-}
+        .contactisimo:hover {
+            transform: scale(1.1);
+        }
+
+        .contactisimo2:hover {
+            transform: scale(1.1);
+        }
 
 
-/* RESPONSIVIDAD */
+        /* RESPONSIVIDAD */
 
-/* Tablets (768px o menos) - 2 columnas */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .footer-section {
-        width: 45%; 
-        margin-bottom: 20px;
-    }
-}
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
 
-/* Celulares (480px o menos) - 1 columna */
-@media (max-width: 480px) {
-    .footer-section {
-        width: 100%; /* Una columna */
-    }
-}
+            .footer-section {
+                width: 45%;
+                margin-bottom: 20px;
+            }
+        }
 
-/* --- Responsividad --- */
-@media (max-width: 768px) {
-    .navbar-brand img, .navbar-logo {
-        max-width: 100px !important;
-        height: auto !important;
-    }
+        @media (max-width: 480px) {
+            .footer-section {
+                width: 100%;
+            }
+        }
 
-    /* Alinear menú al centro en móviles */
-    .navbar-nav .nav-item {
-        margin-left: 0;
-        text-align: center;
-    }
+        /* --- Responsividad --- */
+        @media (max-width: 768px) {
 
-    /* Asegurarse de que el navbar no aumente su tamaño */
-    .navbar-collapse {
-        padding: 0;
-    }
-}
+            .navbar-brand img,
+            .navbar-logo {
+                max-width: 100px !important;
+                height: auto !important;
+            }
 
-/* Estilo general para el carrusel */
-#carouselExampleIndicators {
-    position: relative;
-}
+            .navbar-nav .nav-item {
+                margin-left: 0;
+                text-align: center;
+            }
 
-/* Ajuste de los puntos debajo de las imágenes */
-.carousel-indicators {
-    position: absolute;
-    bottom: 10px;  
-    left: 0;
-    right: 0;
-    display: flex;  
-    justify-content: center;  
-    z-index: 1; 
-}
+            .navbar-collapse {
+                padding: 0;
+            }
+        }
 
-/* Estilo de los puntos indicadores */
-.carousel-indicators li {
-    background-color: rgba(0, 0, 0, 0.5);  
-    border-radius: 50%;  
-    width: 10px; 
-    height: 10px;
-    margin: 0 5px; 
-}
+        #carouselExampleIndicators {
+            position: relative;
+        }
 
-/* Puntos activos */
-.carousel-indicators .active {
-    background-color: #fff;
-}
+        .carousel-indicators {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            z-index: 1;
+        }
 
+        .carousel-indicators li {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+        }
 
+        .carousel-indicators .active {
+            background-color: #fff;
+        }
 
-/* Sección Servicios en Terreno */
-.servicios-terreno {
-    font-family: verdana;
-    padding: 50px 20px;
-    text-align: center;
-    text-shadow: #020e66 
-}
-.contenedor-servicios {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-}
+        .servicios-terreno {
+            font-family: verdana;
+            padding: 50px 20px;
+            text-align: center;
+            text-shadow: #020e66
+        }
 
-.servicio {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    border-radius: 12px;
-    background-color: #1c3d5a; 
-    color: white;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1); 
-}
+        .contenedor-servicios {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
 
-.servicio img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
+        .servicio {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 12px;
+            background-color: #1c3d5a;
+            color: white;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-.servicio p {
-    font-size: 1.1rem;
-    font-weight: 500;
-}
+        .servicio img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
 
-.servicio:hover {
-    background-color: #284c70;
-    transform: translateY(-5px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-}
+        .servicio p {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
 
-@media (max-width: 768px) {
-    .contenedor-servicios {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media (max-width: 480px) {
-    .contenedor-servicios {
-        grid-template-columns: 1fr;
-    }
-}
+        .servicio:hover {
+            background-color: #284c70;
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+        }
 
+        @media (max-width: 768px) {
+            .contenedor-servicios {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
-/* Estilos generales del carrusel */
-.carrusel2 {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    background: #f8f9fa; 
-    padding: 15px 0;
-    white-space: nowrap;
-}
+        @media (max-width: 480px) {
+            .contenedor-servicios {
+                grid-template-columns: 1fr;
+            }
+        }
 
-/* Contenedor con imágenes duplicadas */
-.carrusel2-track {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    width: calc(200px * 10);
-    will-change: transform; 
-    animation: scroll-loop 15s linear infinite;
-}
+        .carrusel2 {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            background: #f8f9fa;
+            padding: 15px 0;
+            white-space: nowrap;
+        }
 
-/* Imágenes del carrusel */
-.carrusel2-track img {
-    height: 120px; 
-    width: auto;
-    max-width: 200px;
-    object-fit: contain;
-}
+        .carrusel2-track {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            width: calc(200px * 10);
+            will-change: transform;
+            animation: scroll-loop 15s linear infinite;
+        }
 
-/* Pausar animación al pasar el mouse */
-.carrusel2-track:hover {
-    animation-play-state: paused;
-}
+        .carrusel2-track img {
+            height: 120px;
+            width: auto;
+            max-width: 200px;
+            object-fit: contain;
+        }
 
-/* Animación de desplazamiento constante */
-@keyframes scroll-loop {
-    from {
-        transform: translateX(0%);
-    }
-    to {
-        transform: translateX(-50%);
-    }
-}
+        .carrusel2-track:hover {
+            animation-play-state: paused;
+        }
 
-/*CHATBOT*/
+        @keyframes scroll-loop {
+            from {
+                transform: translateX(0%);
+            }
 
-#chatbot-container {
-    position: fixed;
-    bottom: 90px;
-    right: 20px;
-    z-index: 1000;
-}
+            to {
+                transform: translateX(-50%);
+            }
+        }
 
-/* BOTÓN PRINCIPAL */
-#chatbot-button {
-    background: linear-gradient(135deg, #004aad, #007bff);
-    color: white;
-    border: none;
-    padding: 14px 22px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    box-shadow: 0px 8px 20px rgba(0, 74, 173, 0.4);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    animation: pulse 2.5s infinite;
-}
+        /*CHATBOT*/
 
-/* HOVER MÁS PRO */
-#chatbot-button:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0px 12px 25px rgba(0, 74, 173, 0.6);
-}
+        #chatbot-container {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            z-index: 1000;
+        }
 
-/* EFECTO LLAMATIVO (pero elegante) */
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(0, 74, 173, 0.5);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(0, 74, 173, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 74, 173, 0);
-    }
-}
+        #chatbot-button {
+            background: linear-gradient(135deg, #004aad, #007bff);
+            color: white;
+            border: none;
+            padding: 14px 22px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            box-shadow: 0px 8px 20px rgba(0, 74, 173, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: pulse 2.5s infinite;
+        }
 
-/* VENTANA CHAT */
-#chat-window {
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    line-height: 1.4;
-    width: 320px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
-    position: absolute;
-    bottom: 70px;
-    right: 0;
-    display: none;
-    flex-direction: column;
-    border: none;
-    overflow: hidden;
-}
+        #chatbot-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0px 12px 25px rgba(0, 74, 173, 0.6);
+        }
 
-/* HEADER */
-#chat-header {
-    background: linear-gradient(135deg, #00275a, #004aad);
-    color: white;
-    padding: 12px;
-    font-weight: 600;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 74, 173, 0.5);
+            }
 
-/* BOTÓN CERRAR */
-#close-chat {
-    cursor: pointer;
-    font-size: 20px;
-    transition: transform 0.2s;
-}
+            70% {
+                box-shadow: 0 0 0 15px rgba(0, 74, 173, 0);
+            }
 
-#close-chat:hover {
-    transform: scale(1.2);
-}
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 74, 173, 0);
+            }
+        }
 
-/* CUERPO */
-#chat-body {
-    padding: 12px;
-    max-height: 220px;
-    overflow-y: auto;
-    color: #333;
-}
+        #chat-window {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            line-height: 1.4;
+            width: 320px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            display: none;
+            flex-direction: column;
+            border: none;
+            overflow: hidden;
+        }
 
-/* FOOTER */
-#chat-footer {
-    display: flex;
-    padding: 10px;
-    border-top: 1px solid #eee;
-    background-color: #fafafa;
-}
+        #chat-header {
+            background: linear-gradient(135deg, #00275a, #004aad);
+            color: white;
+            padding: 12px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-/* INPUT */
-#chat-input {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    outline: none;
-}
+        #close-chat {
+            cursor: pointer;
+            font-size: 20px;
+            transition: transform 0.2s;
+        }
 
-/* BOTÓN ENVIAR */
-#send-btn {
-    background: #004aad;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    margin-left: 5px;
-    border-radius: 8px;
-    transition: background 0.3s;
-}
+        #close-chat:hover {
+            transform: scale(1.2);
+        }
 
-#send-btn:hover {
-    background: #00337a;
-}
+        #chat-body {
+            padding: 12px;
+            max-height: 220px;
+            overflow-y: auto;
+            color: #333;
+        }
+
+        #chat-footer {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #eee;
+            background-color: #fafafa;
+        }
+
+        #chat-input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        #send-btn {
+            background: #004aad;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            margin-left: 5px;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        #send-btn:hover {
+            background: #00337a;
+        }
     </style>
 
 </head>
-<body>
-    <!-- Navbar -->
 
+<body>
+
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <a class="navbar-brand d-flex align-items-center" href="index.html">
             <img src="img/logo-lcm.png" alt="Logo LCM" class="navbar-logo">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -470,7 +467,7 @@ footer {
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-text" href="instructivos.html">Guía de Uso</a>
-                </li>                
+                </li>
                 <li class="nav-item">
                     <a class="nav-link nav-text" href="quienes_somos.html">Quiénes Somos</a>
                 </li>
@@ -482,189 +479,214 @@ footer {
     </nav>
 
     <!-- Botón flotante -->
-<div id="chatbot-container">
-    <button id="chatbot-button">💬 Escríbenos ahora</button>
-    <div id="chat-window" class="hidden">
-        <div id="chat-header">Chat de Atención <span id="close-chat">&times;</span></div>
-        <div id="chat-body">
-            <p>¡Hola! cuéntanos, ¿eres persona o empresa?</p>
-        </div>
-        <div id="chat-footer">
-            <input type="text" id="chat-input" placeholder="Escribe aquí...">
-            <button id="send-btn">Enviar</button>
-        </div>
-    </div>
-</div>
-
-    
-
-<!-- Carrusel con 2 imágenes y 1 video -->
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="4000">
-    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <video class="d-block w-100" autoplay loop muted playsinline>
-                <source src="img/carrusel1-video.mp4" type="video/mp4">
-                Tu navegador no soporta la reproducción de videos.
-            </video>
-        </div>
-        <div class="carousel-item">
-            <img src="img/carrusel-2.png" class="d-block w-100" alt="Carrusel Imagen 2">
-        </div>
-        <div class="carousel-item">
-            <img src="img/carrusel-3.png" class="d-block w-100" alt="Carrusel Imagen 3">
+    <div id="chatbot-container">
+        <button id="chatbot-button">💬 Escríbenos ahora</button>
+        <div id="chat-window" class="hidden">
+            <div id="chat-header">Chat de Atención <span id="close-chat">&times;</span></div>
+            <div id="chat-body">
+                <p>¡Hola! cuéntanos, ¿eres persona o empresa?</p>
+            </div>
+            <div id="chat-footer">
+                <input type="text" id="chat-input" placeholder="Escribe aquí...">
+                <button id="send-btn">Enviar</button>
+            </div>
         </div>
     </div>
 
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
+    <h1 style="text-align:center; margin-top:20px;">
+        Servicios Ópticos en Terreno para Empresas y Personas en Chile
+    </h1>
 
-<!-- Sección: Nuestros Servicios en Terreno -->
-<section class="servicios-terreno">
-    <h2 class="text-center">Nuestros Servicios en Terreno</h2>
-    <div class="contenedor-servicios">
-        <a href="servicios.html">
-            <div class="servicio">
-                <img src="img/examen1.png" alt="Pruebas optométricas">
-                <p>Pruebas optométricas</p>
+    <!-- Carrusel con 2 imágenes y 1 video -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="4000">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <video class="d-block w-100" autoplay loop muted playsinline>
+                    <source src="img/carrusel1-video.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
             </div>
-        </a>
-        <a href="servicios.html">
-            <div class="servicio">
-                <img src="img/examen2.png" alt="Exámenes complementarios">
-                <p>Examen complementario</p>
+            <div class="carousel-item">
+                <img src="img/carrusel-2.png" class="d-block w-100" alt="Carrusel Imagen 2">
             </div>
-        </a>
-        <a href="servicios.html">
-            <div class="servicio">
-                <img src="img/examen3.png" alt="Recetas ópticas">
-                <p>Recetas ópticas</p>
+            <div class="carousel-item">
+                <img src="img/carrusel-3.png" class="d-block w-100" alt="Carrusel Imagen 3">
             </div>
-        </a>
-        <a href="servicios.html">
-            <div class="servicio">
-                <img src="img/examen4.png" alt="Profesionales con amplia trayectoria">
-                <p>Profesionales capacitados</p>
-            </div>
-        </a>
-        <a href="servicios.html">
-            <div class="servicio">
-                <img src="img/examen5.png" alt="Entrega de lentes ópticos">
-                <p>Entrega de lentes ópticos</p>
-            </div>
-        </a>
-        <a href="servicios.html">
-            <div class="servicio">
-                <img src="img/examen6.png" alt="Derivación oportuna">
-                <p>Derivación oportuna</p>
-            </div>
-        </a>
-    </div>
-</section>
-
-<!-- Carrusel Infinito -->
-<section class="nuestros-convenios">
-    <h2 class="text-center">Nuestros Convenios</h2>
-    <div class="carrusel2"> 
-        <div class="carrusel2-track"> 
-            <!-- Imágenes -->
-            <img src="img/logo-integra.png" alt="Integra">
-            <img src="img/logo-conosur.png" alt="Conosur">
-            <img src="img/logo-bci.png" alt="BCI">
-            <img src="img/logo-mineduc.png" alt="Mineduc">
-            <img src="img/logo-ips.png" alt="IPS">
-
-            <img src="img/logo-integra.png" alt="Integra">
-            <img src="img/logo-conosur.png" alt="Conosur">
-            <img src="img/logo-bci.png" alt="BCI">
-            <img src="img/logo-mineduc.png" alt="Mineduc">
-            <img src="img/logo-ips.png" alt="IPS">
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer>
-    <div class="footer-container">
-        <div class="footer-section contact-info">
-            <h5>CONTACTO:</h5>
-            <p>Mauricio Tapia Villarroel</p>
-            <p>Gerente General LCM</p>
-            WhatsApp: <a href="https://wa.me/56988037117?text=¡Hola!%20Me%20gustaría%20saber%20más%20sobre%20sus%20servicios." class="contactisimo2" target="_blank">+56 9 88037117</a>
-            Email: <a href="mailto:serviciosopticosintegrales.mt@gmail.com" class="contactisimo" target="_blank"> serviciosopticosintegrales.mt@gmail.com </a>
         </div>
 
-        <div class="footer-section follow-us">
-            <h5>SÍGUENOS:</h5>
-            <a href="https://www.instagram.com/serviciosopticoslcm/" target="_blank">
-                <img src="img/logo-instagram.png" alt="Instagram" class="instagram-logo">
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- Sección: Nuestros Servicios en Terreno -->
+    <section class="servicios-terreno">
+        <h2 class="text-center">Nuestros Servicios en Terreno</h2>
+        <div class="contenedor-servicios">
+            <a href="servicios.html">
+                <div class="servicio">
+                    <img src="img/examen1.png" loading="lazy" alt="Examen visual optométrico en terreno Chile">
+                    <p>Pruebas optométricas</p>
+                </div>
+            </a>
+            <a href="servicios.html">
+                <div class="servicio">
+                    <img src="img/examen2.png" loading="lazy" alt="Exámenes visuales complementarios en terreno Chile">
+                    <p>Examen complementario</p>
+                </div>
+            </a>
+            <a href="servicios.html">
+                <div class="servicio">
+                    <img src="img/examen3.png" loading="lazy" alt="Recetas ópticas en terreno Chile">
+                    <p>Recetas ópticas</p>
+                </div>
+            </a>
+            <a href="servicios.html">
+                <div class="servicio">
+                    <img src="img/examen4.png" loading="lazy" alt="Profesionales con amplia trayectoria en óptica">
+                    <p>Profesionales capacitados</p>
+                </div>
+            </a>
+            <a href="servicios.html">
+                <div class="servicio">
+                    <img src="img/examen5.png" loading="lazy" alt="Entrega de lentes ópticos en Chile">
+                    <p>Entrega de lentes ópticos</p>
+                </div>
+            </a>
+            <a href="servicios.html">
+                <div class="servicio">
+                    <img src="img/examen6.png" loading="lazy" alt="Derivación oportuna en servicios ópticos Chile">
+                    <p>Derivación oportuna</p>
+                </div>
             </a>
         </div>
+    </section>
 
-        <div class="footer-section map-container">
-            <h5>UBÍCANOS:</h5>
-            <p>Serrano 73, oficina 309</p>
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d294.257794437481!2d-70.64940881183381!3d-33.44547886606151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2scl!4v1739199358045!5m2!1ses-419!2scl"
-                class="map-frame"
-                allowfullscreen=""
-                loading="lazy">
-            </iframe>
+    <!-- Carrusel Infinito -->
+    <section class="nuestros-convenios">
+        <h2 class="text-center">Nuestros Convenios</h2>
+        <div class="carrusel2">
+            <div class="carrusel2-track">
+                <!-- Imágenes -->
+                <img src="img/logo-integra.png" loading="lazy" alt="Integra">
+                <img src="img/logo-conosur.png" loading="lazy" alt="Conosur">
+                <img src="img/logo-bci.png" loading="lazy" alt="BCI">
+                <img src="img/logo-mineduc.png" loading="lazy" alt="Mineduc">
+                <img src="img/logo-ips.png" loading="lazy" alt="IPS">
+
+                <img src="img/logo-integra.png" loading="lazy" alt="Integra">
+                <img src="img/logo-conosur.png" loading="lazy" alt="Conosur">
+                <img src="img/logo-bci.png" loading="lazy" alt="BCI">
+                <img src="img/logo-mineduc.png" loading="lazy" alt="Mineduc">
+                <img src="img/logo-ips.png" loading="lazy" alt="IPS">
+            </div>
         </div>
-    </div>
+    </section>
 
-    <hr class="footer-line">
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section contact-info">
+                <h5>CONTACTO:</h5>
+                <p>Mauricio Tapia Villarroel</p>
+                <p>Gerente General LCM</p>
+                WhatsApp: <a
+                    href="https://wa.me/56988037117?text=¡Hola!%20Me%20gustaría%20saber%20más%20sobre%20sus%20servicios."
+                    class="contactisimo2" target="_blank">+56 9 88037117</a>
+                Email: <a href="mailto:serviciosopticosintegrales.mt@gmail.com" class="contactisimo" target="_blank">
+                    serviciosopticosintegrales.mt@gmail.com </a>
+            </div>
 
-    <div class="footer-bottom">
-        <p><a href="https://www.opticaslcm.cl" class="footer-link">www.opticaslcm.cl</a></p>
-        <p>© 2020 Ópticas LCM - Todos los derechos reservados</p>
-    </div>
-</footer>
+            <div class="footer-section follow-us">
+                <h5>SÍGUENOS:</h5>
+                <a href="https://www.instagram.com/serviciosopticoslcm/" target="_blank">
+                    <img src="img/logo-instagram.png" alt="Instagram" class="instagram-logo">
+                </a>
+            </div>
 
-<script>
-    document.getElementById("chatbot-button").addEventListener("click", function() {
-        var chatWindow = document.getElementById("chat-window");
-        if (chatWindow.style.display === "none" || chatWindow.style.display === "") {
-            chatWindow.style.display = "flex";
-        } else {
-            chatWindow.style.display = "none";
-        }
-    });
+            <div class="footer-section map-container">
+                <h5>UBÍCANOS:</h5>
+                <p>Serrano 73, oficina 309</p>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d294.257794437481!2d-70.64940881183381!3d-33.44547886606151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2scl!4v1739199358045!5m2!1ses-419!2scl"
+                    class="map-frame" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
 
-    document.getElementById("close-chat").addEventListener("click", function() {
-        document.getElementById("chat-window").style.display = "none";
-    });
+        <hr class="footer-line">
 
-    document.getElementById("send-btn").addEventListener("click", function() {
-        var userInput = document.getElementById("chat-input").value.toLowerCase();
-        var chatBody = document.getElementById("chat-body");
+        <div class="footer-bottom">
+            <p><a href="https://www.opticaslcm.cl" class="footer-link">www.opticaslcm.cl</a></p>
+            <p>© 2020 Ópticas LCM - Todos los derechos reservados</p>
+        </div>
+    </footer>
 
-        chatBody.innerHTML += `<p><strong>Tú:</strong> ${userInput}</p>`;
+    <script>
+        document.getElementById("chatbot-button").addEventListener("click", function () {
+            var chatWindow = document.getElementById("chat-window");
+            if (chatWindow.style.display === "none" || chatWindow.style.display === "") {
+                chatWindow.style.display = "flex";
+            } else {
+                chatWindow.style.display = "none";
+            }
+        });
 
-        if (userInput.includes("persona")) {
-            chatBody.innerHTML += `<p>Si necesitas una hora para evaluación optométrica o solucionar algún problema con alguno de nuestros productos escríbenos a nuestro <a href='https://wa.me/56988037117?text=¡Hola!%20Quisiera%20una%20evaluación%20optométrica%20o%20solucionar%20una%20inquietud:' target='_blank'>WhatsApp</a> o por correo a <a href="mailto:serviciosopticosintegrales.mt@gmail.com" onclick="window.open('mailto:serviciosopticosintegrales.mt@gmail.com'); return false;">serviciosopticosintegrales.mt@gmail.com</a></p>`;
-            chatBody.innerHTML += `<p>¡Estamos felices de poder ayudarte! 😊</p>`;
-        } else if (userInput.includes("empresa")) {
-            chatBody.innerHTML += `<p>Si necesitas conocer nuestros convenios, contáctanos a nuestro Whatssap <a href='https://wa.me/56988037117?text=¡Hola!%20Quisiera%20conocer%20sobre%20sus%20convenios%20para%20empresas:' target='_blank'>WhatsApp</a> o por correo a <a href="mailto:serviciosopticosintegrales.mt@gmail.com" onclick="window.open('mailto:serviciosopticosintegrales.mt@gmail.com'); return false;">serviciosopticosintegrales.mt@gmail.com</a></p>`;
-            chatBody.innerHTML += `<p>¡Estamos felices de poder entregarte toda la información necesaria para los convenios! 😊</p>`;
-        } else {
-            chatBody.innerHTML += `<p>No entendí tu respuesta. ¿Eres persona o empresa?</p>`;
-        }
+        document.getElementById("close-chat").addEventListener("click", function () {
+            document.getElementById("chat-window").style.display = "none";
+        });
 
-        document.getElementById("chat-input").value = "";
-        chatBody.scrollTop = chatBody.scrollHeight;
-    });
+        document.getElementById("send-btn").addEventListener("click", function () {
+            var userInput = document.getElementById("chat-input").value.toLowerCase();
+            var chatBody = document.getElementById("chat-body");
+
+            chatBody.innerHTML += `<p><strong>Tú:</strong> ${userInput}</p>`;
+
+            if (userInput.includes("persona")) {
+                chatBody.innerHTML += `<p>Si necesitas una hora para evaluación optométrica o solucionar algún problema con alguno de nuestros productos escríbenos a nuestro <a href='https://wa.me/56988037117?text=¡Hola!%20Quisiera%20una%20evaluación%20optométrica%20o%20solucionar%20una%20inquietud:' target='_blank'>WhatsApp</a> o por correo a <a href="mailto:serviciosopticosintegrales.mt@gmail.com" onclick="window.open('mailto:serviciosopticosintegrales.mt@gmail.com'); return false;">serviciosopticosintegrales.mt@gmail.com</a></p>`;
+                chatBody.innerHTML += `<p>¡Estamos felices de poder ayudarte! 😊</p>`;
+            } else if (userInput.includes("empresa")) {
+                chatBody.innerHTML += `<p>Si necesitas conocer nuestros convenios, contáctanos a nuestro Whatssap <a href='https://wa.me/56988037117?text=¡Hola!%20Quisiera%20conocer%20sobre%20sus%20convenios%20para%20empresas:' target='_blank'>WhatsApp</a> o por correo a <a href="mailto:serviciosopticosintegrales.mt@gmail.com" onclick="window.open('mailto:serviciosopticosintegrales.mt@gmail.com'); return false;">serviciosopticosintegrales.mt@gmail.com</a></p>`;
+                chatBody.innerHTML += `<p>¡Estamos felices de poder entregarte toda la información necesaria para los convenios! 😊</p>`;
+            } else {
+                chatBody.innerHTML += `<p>No entendí tu respuesta. ¿Eres persona o empresa?</p>`;
+            }
+
+            document.getElementById("chat-input").value = "";
+            chatBody.scrollTop = chatBody.scrollHeight;
+        });
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Optician",
+  "name": "Ópticas LCM",
+  "image": "https://www.serviciosopticoslcm.cl/img/logo-lcm.png",
+  "telephone": "+56988037117",
+  "url": "https://www.serviciosopticoslcm.cl",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Serrano 73, oficina 309",
+    "addressLocality": "Santiago",
+    "addressRegion": "RM",
+    "addressCountry": "CL"
+  },
+  "areaServed": "Chile",
+  "sameAs": [
+    "https://www.instagram.com/serviciosopticoslcm/"
+  ]
+}
 </script>
 
 
@@ -672,4 +694,5 @@ footer {
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
