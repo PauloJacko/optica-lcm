@@ -445,6 +445,145 @@
         #send-btn:hover {
             background: #00337a;
         }
+
+        /* SERVICIOS */
+
+        .servicios-modernos {
+            padding: 80px 20px;
+            background: #f5f7fb;
+        }
+
+        .titulo-servicios {
+            font-size: 42px;
+            font-weight: 700;
+            color: #00275a;
+        }
+
+        .subtitulo-servicios {
+            font-size: 18px;
+            color: #6c757d;
+            max-width: 700px;
+            margin: 10px auto 0;
+        }
+
+        .card-servicio {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08);
+            height: 100%;
+        }
+
+        .card-servicio:hover {
+            transform: translateY(-8px);
+            box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+
+        .icono-servicio {
+            width: 65px;
+            height: 65px;
+            background: #00275a;
+            color: white;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            margin: 0 auto 20px;
+        }
+
+
+        .card-servicio h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #00275a;
+            margin-bottom: 10px;
+        }
+
+        .card-servicio p {
+            font-size: 15px;
+            color: #6c757d;
+        }
+
+
+        @media (max-width: 768px) {
+            .titulo-servicios {
+                font-size: 32px;
+            }
+
+            .subtitulo-servicios {
+                font-size: 16px;
+            }
+        }
+
+        /* POR QUÉ ELEGIR */
+
+        .porque-elegir {
+            padding: 80px 20px;
+            background: #ffffff;
+        }
+
+        .titulo-porque {
+            font-size: 38px;
+            font-weight: 700;
+            color: #00275a;
+        }
+
+        .subtitulo-porque {
+            font-size: 18px;
+            color: #6c757d;
+            margin-top: 10px;
+        }
+
+        .item-porque {
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .item-porque:hover {
+            transform: translateY(-5px);
+        }
+
+
+        .icono-porque {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: #eef2f7;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: #004aad;
+        }
+
+
+        .item-porque h5 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #00275a;
+            margin-bottom: 10px;
+        }
+
+        .item-porque p {
+            font-size: 15px;
+            color: #6c757d;
+        }
+
+
+        @media (max-width: 768px) {
+            .titulo-porque {
+                font-size: 30px;
+            }
+
+            .subtitulo-porque {
+                font-size: 16px;
+            }
+        }
     </style>
 
 </head>
@@ -526,54 +665,135 @@
     </div>
 
     <!-- Sección: Nuestros Servicios en Terreno -->
-    <section class="servicios-terreno">
-        <h3 class="text-center">Servicios Ópticos en Terreno para Empresas y Personas en Chile</h3>
-        <div class="contenedor-servicios">
-            <a href="servicios.html">
-                <div class="servicio">
-                    <img src="img/examen1.png" loading="lazy" alt="Examen visual optométrico en terreno Chile">
-                    <p>Pruebas optométricas</p>
+    <section class="servicios-modernos">
+        <div class="container text-center">
+            <h2 class="titulo-servicios">Nuestros Servicios</h2>
+            <p class="subtitulo-servicios">
+                Soluciones integrales de salud visual con atención personalizada en todo Chile
+            </p>
+
+            <div class="row mt-5">
+
+                <!-- Servicio 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card-servicio">
+                        <div class="icono-servicio">👁️</div>
+                        <h4>Pruebas Optométricas</h4>
+                        <p>Exámenes completos de agudeza visual realizados por profesionales certificados.</p>
+                    </div>
                 </div>
-            </a>
-            <a href="servicios.html">
-                <div class="servicio">
-                    <img src="img/examen2.png" loading="lazy" alt="Exámenes visuales complementarios en terreno Chile">
-                    <p>Examen complementario</p>
+
+                <!-- Servicio 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card-servicio">
+                        <div class="icono-servicio">📋</div>
+                        <h4>Exámenes Complementarios</h4>
+                        <p>Evaluaciones adicionales para diagnóstico preciso de tu salud visual.</p>
+                    </div>
                 </div>
-            </a>
-            <a href="servicios.html">
-                <div class="servicio">
-                    <img src="img/examen3.png" loading="lazy" alt="Recetas ópticas en terreno Chile">
-                    <p>Recetas ópticas</p>
+
+                <!-- Servicio 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card-servicio">
+                        <div class="icono-servicio">📄</div>
+                        <h4>Recetas Ópticas</h4>
+                        <p>Emisión inmediata de recetas médicas para tus lentes correctivos.</p>
+                    </div>
                 </div>
-            </a>
-            <a href="servicios.html">
-                <div class="servicio">
-                    <img src="img/examen4.png" loading="lazy" alt="Profesionales con amplia trayectoria en óptica">
-                    <p>Profesionales capacitados</p>
+
+                <!-- Servicio 4 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card-servicio">
+                        <div class="icono-servicio">👨‍⚕️</div>
+                        <h4>Profesionales Capacitados</h4>
+                        <p>Equipo de tecnólogos médicos y optometristas con amplia experiencia.</p>
+                    </div>
                 </div>
-            </a>
-            <a href="servicios.html">
-                <div class="servicio">
-                    <img src="img/examen5.png" loading="lazy" alt="Entrega de lentes ópticos en Chile">
-                    <p>Entrega de lentes ópticos</p>
+
+                <!-- Servicio 5 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card-servicio">
+                        <div class="icono-servicio">👓</div>
+                        <h4>Entrega de Lentes</h4>
+                        <p>Servicio completo con entrega de lentes ópticos en terreno.</p>
+                    </div>
                 </div>
-            </a>
-            <a href="servicios.html">
-                <div class="servicio">
-                    <img src="img/examen6.png" loading="lazy" alt="Derivación oportuna en servicios ópticos Chile">
-                    <p>Derivación oportuna</p>
+
+                <!-- Servicio 6 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card-servicio">
+                        <div class="icono-servicio">📈</div>
+                        <h4>Derivación Oportuna</h4>
+                        <p>Coordinación con especialistas en casos que requieran atención médica.</p>
+                    </div>
                 </div>
-            </a>
+
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+    <!-- Sección: ¿Por Qué Elegir Ópticas LCM? -->
+    <section class="porque-elegir">
+        <div class="container text-center">
+            <h2 class="titulo-porque">¿Por Qué Elegir Ópticas LCM?</h2>
+            <p class="subtitulo-porque">
+                Experiencia, profesionalismo y compromiso con tu salud visual
+            </p>
+
+            <div class="row mt-5">
+
+                <!-- Item 1 -->
+                <div class="col-md-3 mb-4">
+                    <div class="item-porque">
+                        <div class="icono-porque">📍</div>
+                        <h5>Atención en Terreno</h5>
+                        <p>Nos desplazamos a tu empresa o domicilio con todo el equipamiento necesario.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="col-md-3 mb-4">
+                    <div class="item-porque">
+                        <div class="icono-porque">🏢</div>
+                        <h5>Cobertura Nacional</h5>
+                        <p>Presencia en todas las regiones de Chile con respuesta rápida y eficiente.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="col-md-3 mb-4">
+                    <div class="item-porque">
+                        <div class="icono-porque">⚡</div>
+                        <h5>Atención a Empresas</h5>
+                        <p>Convenios corporativos diseñados para el cuidado visual de tus colaboradores.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="col-md-3 mb-4">
+                    <div class="item-porque">
+                        <div class="icono-porque">🏅</div>
+                        <h5>Rapidez y Profesionalismo</h5>
+                        <p>Servicio ágil con estándares de calidad y atención personalizada garantizada.</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
     <!-- Carrusel Infinito -->
     <section class="nuestros-convenios">
-        <h2 class="text-center">Nuestros Convenios</h2>
+        <div class="container text-center">
+            <h2 class="titulo-porque">Empresas que confían en nosotros</h2>
+            <p class="subtitulo-porque">
+                Convenios corporativos con las principales empresas de Chile
+            </p>
+        </div>
         <div class="carrusel2">
             <div class="carrusel2-track">
-                <!-- Imágenes -->
                 <img src="img/logo-integra.png" loading="lazy" alt="Integra">
                 <img src="img/logo-conosur.png" loading="lazy" alt="Conosur">
                 <img src="img/logo-bci.png" loading="lazy" alt="BCI">
