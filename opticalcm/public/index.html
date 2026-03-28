@@ -565,20 +565,25 @@
         }
 
         /* HERO BASE LIMPIO Y PREMIUM */
-.hero-clean {
+
+        .hero-clean {
     position: relative;
-    background: linear-gradient(135deg, #f8fafc 0%, #eef3f9 50%, #f8fafc 100%);
-    padding: 140px 20px 120px;
+    background: 
+        linear-gradient(rgba(0, 20, 60, 0.55), rgba(0, 20, 60, 0.55)),
+        url('img/operativo-real.webp') center/cover no-repeat;
+    padding: 160px 20px 140px;
+    color: white;
     overflow: hidden;
 }
 
+/* Capa base (opcional, por si quieres overlays extra después) */
 .hero-clean::before {
     content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
+    inset: 0;
 }
 
+/* Efecto glow azul elegante */
 .hero-clean::after {
     content: "";
     position: absolute;
@@ -589,8 +594,10 @@
     right: -200px;
     border-radius: 50%;
     filter: blur(80px);
+    z-index: 1;
 }
 
+/* Glow secundario */
 .hero-shape {
     position: absolute;
     width: 700px;
@@ -603,6 +610,7 @@
     z-index: 1;
 }
 
+/* Contenido encima */
 .hero-wrapper {
     max-width: 900px;
     margin: 0 auto;
@@ -611,23 +619,25 @@
     z-index: 2;
 }
 
+/* TEXTO AJUSTADO PARA FONDO OSCURO */
 .hero-text h1 {
-    font-size: 46px;
+    font-size: 48px;
     font-weight: 700;
-    color: #0f172a;
+    color: #ffffff;
     line-height: 1.2;
 }
 
 .hero-text span {
-    color: #004aad;
+    color: #60a5fa; /* azul más visible sobre fondo oscuro */
 }
 
 .hero-text p {
     margin-top: 20px;
     font-size: 18px;
-    color: #475569;
+    color: #e2e8f0;
 }
 
+/* BOTONES MEJORADOS PARA CONTRASTE */
 .hero-cta-float {
     margin-top: 40px;
     display: flex;
@@ -640,21 +650,25 @@
     border-radius: 999px;
     font-weight: 600;
     text-decoration: none;
-    background: #004aad;
-    color: white;
+    background: #ffffff;
+    color: #00275a;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 25px rgba(0, 74, 173, 0.25);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
 .btn-pill:hover {
-    background: #00337a;
+    background: #f1f5f9;
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(0, 74, 173, 0.35);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
 }
-
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+
+    .hero-clean {
+        padding: 120px 15px 100px;
+        background-position: center; /* puedes cambiar a top center si se corta la cara */
+    }
 
     .hero-text h1 {
         font-size: 30px;
@@ -674,6 +688,7 @@
         text-align: center;
     }
 }
+
     </style>
 
 </head>
