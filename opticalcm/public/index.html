@@ -566,215 +566,213 @@
 
         /* HERO BASE LIMPIO Y PREMIUM */
 
-.hero-clean {
-    position: relative;
-    background: 
-        linear-gradient(rgba(0, 20, 60, 0.7), rgba(0, 20, 60, 0.7)),
-        url('/img/operativo-real.webp') no-repeat;
-        
-    background-size: cover;
-    background-position: 75% center;
+        .hero-clean {
+            position: relative;
+            background:
+                linear-gradient(rgba(0, 20, 60, 0.7), rgba(0, 20, 60, 0.7)),
+                url('/img/operativo-real.webp') no-repeat;
 
-    padding: 160px 20px 140px;
-    color: white;
-    overflow: hidden;
-}
+            background-size: cover;
+            background-position: 75% center;
 
-/* Capa base (opcional, por si quieres overlays extra después) */
-.hero-clean::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-}
+            padding: 160px 20px 140px;
+            color: white;
+            overflow: hidden;
+        }
 
-/* Efecto glow azul elegante */
-.hero-clean::after {
-    content: "";
-    position: absolute;
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(0, 74, 173, 0.18), transparent 70%);
-    top: -250px;
-    right: -200px;
-    border-radius: 50%;
-    filter: blur(80px);
-    z-index: 1;
-}
+        /* Capa base (opcional, por si quieres overlays extra después) */
+        .hero-clean::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+        }
 
-/* Glow secundario */
-.hero-shape {
-    position: absolute;
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, rgba(0, 74, 173, 0.12), transparent 70%);
-    bottom: -300px;
-    left: -200px;
-    border-radius: 50%;
-    filter: blur(60px);
-    z-index: 1;
-}
+        /* Efecto glow azul elegante */
+        .hero-clean::after {
+            content: "";
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 74, 173, 0.18), transparent 70%);
+            top: -250px;
+            right: -200px;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 1;
+        }
 
-/* Contenido encima */
-.hero-wrapper {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-}
+        /* Glow secundario */
+        .hero-shape {
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(0, 74, 173, 0.12), transparent 70%);
+            bottom: -300px;
+            left: -200px;
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 1;
+        }
 
-/* TEXTO AJUSTADO PARA FONDO OSCURO */
+        /* Contenido encima */
+        .hero-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
 
-.hero-text h1 {
-    font-size: 48px;
-    font-weight: 700;
-    color: #ffffff;
-    line-height: 1.2;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-}
+        /* TEXTO AJUSTADO PARA FONDO OSCURO */
 
-.hero-text span {
-    color: #60a5fa; /* azul más visible sobre fondo oscuro */
-}
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+        }
 
-.hero-text p {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #e2e8f0;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
+        .hero-text span {
+            color: #60a5fa;
+            /* azul más visible sobre fondo oscuro */
+        }
 
-/* BOTONES MEJORADOS PARA CONTRASTE */
-.hero-cta-float {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
+        .hero-text p {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #e2e8f0;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
 
-.btn-pill {
-    padding: 14px 32px;
-    border-radius: 999px;
-    font-weight: 600;
-    text-decoration: none;
-    background: #ffffff;
-    color: #00275a;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-}
+        /* BOTONES MEJORADOS PARA CONTRASTE */
+        .hero-cta-float {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
 
-.btn-pill:hover {
-    background: #f1f5f9;
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
-}
+        .btn-pill {
+            padding: 14px 32px;
+            border-radius: 999px;
+            font-weight: 600;
+            text-decoration: none;
+            background: #ffffff;
+            color: #00275a;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
+        .btn-pill:hover {
+            background: #f1f5f9;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+        }
 
-    .hero-clean {
-        padding: 120px 15px 100px;
-        background-position: 85% center;
-    }
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
 
-    .hero-text h1 {
-        font-size: 30px;
-    }
+            .hero-clean {
+                padding: 120px 15px 100px;
+                background-position: 85% center;
+            }
 
-    .hero-text p {
-        font-size: 16px;
-    }
+            .hero-text h1 {
+                font-size: 30px;
+            }
 
-    .hero-cta-float {
-        flex-direction: column;
-        align-items: center;
-    }
+            .hero-text p {
+                font-size: 16px;
+            }
 
-    .btn-pill {
-        width: 100%;
-        text-align: center;
-    }
-}
-/*IMPACTO*/
+            .hero-cta-float {
+                flex-direction: column;
+                align-items: center;
+            }
 
-/* SECCIÓN IMPACTO */
+            .btn-pill {
+                width: 100%;
+                text-align: center;
+            }
+        }
 
-.impacto {
-    position: relative;
-    background: url('img/personas-feas.png') no-repeat;
-    background-size: cover;
-    background-position: right center;
-    padding: 100px 20px;
-    overflow: hidden;
-}
+        /* SECCIÓN IMPACTO */
 
-/* DIFUMINADO BLANCO IZQUIERDA */
-.impacto-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to right,
-        rgba(255,255,255,0.95) 0%,
-        rgba(255,255,255,0.85) 35%,
-        rgba(255,255,255,0.4) 55%,
-        rgba(255,255,255,0) 75%
-    );
-    z-index: 1;
-}
+        .impacto {
+            position: relative;
+            background: url('/img/personas-feas.png') no-repeat;
+            background-size: cover;
+            background-position: right center;
+            padding: 100px 20px;
+            overflow: hidden;
+        }
 
-/* CONTENIDO */
-.impacto-content {
-    position: relative;
-    z-index: 2;
-}
+        /* DIFUMINADO BLANCO IZQUIERDA */
+        .impacto-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0.95) 0%,
+                    rgba(255, 255, 255, 0.85) 35%,
+                    rgba(255, 255, 255, 0.4) 55%,
+                    rgba(255, 255, 255, 0) 75%);
+            z-index: 1;
+        }
 
-.impacto-texto h2 {
-    font-size: 38px;
-    font-weight: 700;
-    color: #00275a;
-    margin-bottom: 40px;
-}
+        /* CONTENIDO */
+        .impacto-content {
+            position: relative;
+            z-index: 2;
+        }
 
-/* NÚMEROS */
-.impacto-numeros {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
+        .impacto-texto h2 {
+            font-size: 38px;
+            font-weight: 700;
+            color: #00275a;
+            margin-bottom: 40px;
+        }
 
-.numero h3 {
-    font-size: 42px;
-    color: #004aad;
-    font-weight: 700;
-}
+        /* NÚMEROS */
+        .impacto-numeros {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
 
-.numero p {
-    margin: 0;
-    color: #555;
-}
+        .numero h3 {
+            font-size: 42px;
+            color: #004aad;
+            font-weight: 700;
+        }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
+        .numero p {
+            margin: 0;
+            color: #555;
+        }
 
-    .impacto {
-        background-position: center;
-        padding: 80px 20px;
-    }
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
 
-    .impacto-overlay {
-        background: rgba(255,255,255,0.92);
-    }
+            .impacto {
+                background-position: center;
+                padding: 80px 20px;
+            }
 
-    .impacto-texto h2 {
-        font-size: 28px;
-        text-align: center;
-    }
+            .impacto-overlay {
+                background: rgba(255, 255, 255, 0.92);
+            }
 
-    .impacto-numeros {
-        align-items: center;
-        text-align: center;
-    }
-}
+            .impacto-texto h2 {
+                font-size: 28px;
+                text-align: center;
+            }
+
+            .impacto-numeros {
+                align-items: center;
+                text-align: center;
+            }
+        }
     </style>
 
 </head>
@@ -823,64 +821,64 @@
         </div>
     </div>
 
-<!-- HERO PREMIUM MINIMAL -->
-<section class="hero-clean">
-    <div class="container hero-wrapper">
-        <div class="hero-text">
-            <h1>
-                Atención Óptica Profesional <br>
-                <span>Directamente en tu Empresa</span>
-            </h1>
-            <p>
-                Evaluaciones visuales, entrega de lentes y cobertura en todo Chile.
-                Un servicio moderno, rápido y confiable.
-            </p>
+    <!-- HERO PREMIUM MINIMAL -->
+    <section class="hero-clean">
+        <div class="container hero-wrapper">
+            <div class="hero-text">
+                <h1>
+                    Atención Óptica Profesional <br>
+                    <span>Directamente en tu Empresa</span>
+                </h1>
+                <p>
+                    Evaluaciones visuales, entrega de lentes y cobertura en todo Chile.
+                    Un servicio moderno, rápido y confiable.
+                </p>
+            </div>
+            <div class="hero-cta-float">
+                <a href="https://wa.me/56988037117" target="_blank" class="btn-pill whatsapp">
+                    WhatsApp
+                </a>
+                <a href="mailto:serviciosopticosintegrales.mt@gmail.com" target="_blank" class="btn-pill mail">
+                    Correo
+                </a>
+            </div>
         </div>
-        <div class="hero-cta-float">
-            <a href="https://wa.me/56988037117" target="_blank" class="btn-pill whatsapp">
-                WhatsApp
-            </a>
-            <a href="mailto:serviciosopticosintegrales.mt@gmail.com" target="_blank" class="btn-pill mail">
-                Correo
-            </a>
-        </div>
-    </div>
-    <div class="hero-shape"></div>
+        <div class="hero-shape"></div>
 
-</section>
+    </section>
 
-<!-- Sección: Nuestro Impacto en Chile -->
+    <!-- Sección: Nuestro Impacto en Chile -->
 
-<section class="impacto">
-    <div class="impacto-overlay"></div>
+    <section class="impacto">
+        <div class="impacto-overlay"></div>
 
-    <div class="container impacto-content">
-        <div class="row">
+        <div class="container impacto-content">
+            <div class="row">
 
-            <div class="col-md-6 impacto-texto">
-                <h2>Nuestro Impacto en Chile</h2>
+                <div class="col-md-6 impacto-texto">
+                    <h2>Nuestro Impacto en Chile</h2>
 
-                <div class="impacto-numeros">
-                    <div class="numero">
-                        <h3 data-target="12000">0</h3>
-                        <p>Personas Atendidas</p>
-                    </div>
+                    <div class="impacto-numeros">
+                        <div class="numero">
+                            <h3 data-target="12000">0</h3>
+                            <p>Personas Atendidas</p>
+                        </div>
 
-                    <div class="numero">
-                        <h3 data-target="16">0</h3>
-                        <p>Regiones Cubiertas</p>
-                    </div>
+                        <div class="numero">
+                            <h3 data-target="16">0</h3>
+                            <p>Regiones Cubiertas</p>
+                        </div>
 
-                    <div class="numero">
-                        <h3 data-target="13000">0</h3>
-                        <p>Lentes Entregados</p>
+                        <div class="numero">
+                            <h3 data-target="13000">0</h3>
+                            <p>Lentes Entregados</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Sección: Nuestros Servicios en Terreno -->
     <section class="servicios-modernos">
@@ -1100,38 +1098,38 @@
             chatBody.scrollTop = chatBody.scrollHeight;
         });
 
-const counters = document.querySelectorAll('.numero h3');
-let activated = false;
+        const counters = document.querySelectorAll('.numero h3');
+        let activated = false;
 
-function activarContadores() {
-    const section = document.querySelector('.impacto');
-    const sectionTop = section.getBoundingClientRect().top;
+        function activarContadores() {
+            const section = document.querySelector('.impacto');
+            const sectionTop = section.getBoundingClientRect().top;
 
-    if (sectionTop < window.innerHeight - 100 && !activated) {
-        counters.forEach(counter => {
-            const target = +counter.getAttribute('data-target');
-            let count = 0;
+            if (sectionTop < window.innerHeight - 100 && !activated) {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    let count = 0;
 
-            const updateCount = () => {
-                const increment = target / 100;
+                    const updateCount = () => {
+                        const increment = target / 100;
 
-                if (count < target) {
-                    count += increment;
-                    counter.innerText = Math.floor(count);
-                    setTimeout(updateCount, 20);
-                } else {
-                    counter.innerText = target.toLocaleString();
-                }
-            };
+                        if (count < target) {
+                            count += increment;
+                            counter.innerText = Math.floor(count);
+                            setTimeout(updateCount, 20);
+                        } else {
+                            counter.innerText = target.toLocaleString();
+                        }
+                    };
 
-            updateCount();
-        });
+                    updateCount();
+                });
 
-        activated = true;
-    }
-}
+                activated = true;
+            }
+        }
 
-window.addEventListener('scroll', activarContadores);
+        window.addEventListener('scroll', activarContadores);
 
     </script>
 
