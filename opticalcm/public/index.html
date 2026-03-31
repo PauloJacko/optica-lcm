@@ -695,7 +695,86 @@
         text-align: center;
     }
 }
+/*IMPACTO*/
 
+/* SECCIÓN IMPACTO */
+
+.impacto {
+    position: relative;
+    background: url('/img/personas-feas.png') no-repeat;
+    background-size: cover;
+    background-position: right center;
+    padding: 100px 20px;
+    overflow: hidden;
+}
+
+/* DIFUMINADO BLANCO IZQUIERDA */
+.impacto-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(255,255,255,0.95) 0%,
+        rgba(255,255,255,0.85) 35%,
+        rgba(255,255,255,0.4) 55%,
+        rgba(255,255,255,0) 75%
+    );
+    z-index: 1;
+}
+
+/* CONTENIDO */
+.impacto-content {
+    position: relative;
+    z-index: 2;
+}
+
+.impacto-texto h2 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #00275a;
+    margin-bottom: 40px;
+}
+
+/* NÚMEROS */
+.impacto-numeros {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.numero h3 {
+    font-size: 42px;
+    color: #004aad;
+    font-weight: 700;
+}
+
+.numero p {
+    margin: 0;
+    color: #555;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .impacto {
+        background-position: center;
+        padding: 80px 20px;
+    }
+
+    .impacto-overlay {
+        background: rgba(255,255,255,0.92);
+    }
+
+    .impacto-texto h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .impacto-numeros {
+        align-items: center;
+        text-align: center;
+    }
+}
     </style>
 
 </head>
@@ -768,6 +847,39 @@
     </div>
     <div class="hero-shape"></div>
 
+</section>
+
+<!-- Sección: Nuestro Impacto en Chile -->
+
+<section class="impacto">
+    <div class="impacto-overlay"></div>
+
+    <div class="container impacto-content">
+        <div class="row">
+
+            <div class="col-md-6 impacto-texto">
+                <h2>Nuestro Impacto en Chile</h2>
+
+                <div class="impacto-numeros">
+                    <div class="numero">
+                        <h3 data-target="12000">0</h3>
+                        <p>Personas Atendidas</p>
+                    </div>
+
+                    <div class="numero">
+                        <h3 data-target="16">0</h3>
+                        <p>Regiones Cubiertas</p>
+                    </div>
+
+                    <div class="numero">
+                        <h3 data-target="13000">0</h3>
+                        <p>Lentes Entregados</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </section>
 
     <!-- Sección: Nuestros Servicios en Terreno -->
@@ -987,6 +1099,40 @@
             document.getElementById("chat-input").value = "";
             chatBody.scrollTop = chatBody.scrollHeight;
         });
+
+const counters = document.querySelectorAll('.numero h3');
+let activated = false;
+
+function activarContadores() {
+    const section = document.querySelector('.impacto');
+    const sectionTop = section.getBoundingClientRect().top;
+
+    if (sectionTop < window.innerHeight - 100 && !activated) {
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            let count = 0;
+
+            const updateCount = () => {
+                const increment = target / 100;
+
+                if (count < target) {
+                    count += increment;
+                    counter.innerText = Math.floor(count);
+                    setTimeout(updateCount, 20);
+                } else {
+                    counter.innerText = target.toLocaleString();
+                }
+            };
+
+            updateCount();
+        });
+
+        activated = true;
+    }
+}
+
+window.addEventListener('scroll', activarContadores);
+
     </script>
 
     <script type="application/ld+json">
