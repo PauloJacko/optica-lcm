@@ -901,7 +901,7 @@
                         </div>
 
                         <div class="numero">
-                            <h3 data-target="16">0</h3>
+                            <h3 data-target="16" data-no-plus="true">0</h3>
                             <p>Regiones Cubiertas</p>
                         </div>
 
@@ -1146,17 +1146,22 @@
                     const target = +counter.getAttribute('data-target');
                     let count = 0;
 
-            const updateCount = () => {
-                const increment = target / 100;
+                    const updateCount = () => {
+                        const increment = target / 100;
+                        const noPlus = counter.getAttribute('data-no-plus');
 
-                if (count < target) {
-                    count += increment;
-                    counter.innerText = Math.floor(count).toLocaleString('es-CL');
-                    setTimeout(updateCount, 20);
-                } else {
-                    counter.innerText = "+ de " + target.toLocaleString('es-CL');
-                }
-            };
+                        if (count < target) {
+                            count += increment;
+                            counter.innerText = Math.floor(count).toLocaleString('es-CL');
+                            setTimeout(updateCount, 20);
+                        } else {
+                            if (noPlus) {
+                                counter.innerText = target.toLocaleString('es-CL');
+                            } else {
+                                counter.innerText = "+ de " + target.toLocaleString('es-CL');
+                            }
+                        }
+                    };
 
                     updateCount();
                 });
