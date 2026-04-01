@@ -306,124 +306,155 @@
             }
         }
 
-        /*CHATBOT*/
+/* CHATBOT MEJORADO Y RESPONSIVE */
 
-        #chatbot-container {
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            z-index: 1000;
-        }
+#chatbot-container {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    z-index: 1000;
+}
 
-        #chatbot-button {
-            background: linear-gradient(135deg, #004aad, #007bff);
-            color: white;
-            border: none;
-            padding: 14px 22px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            box-shadow: 0px 8px 20px rgba(0, 74, 173, 0.4);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            animation: pulse 2.5s infinite;
-        }
+#chatbot-button {
+    background: linear-gradient(135deg, #004aad, #007bff);
+    color: white;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0px 8px 20px rgba(0, 74, 173, 0.4);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    animation: pulse 2.5s infinite;
+}
 
-        #chatbot-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0px 12px 25px rgba(0, 74, 173, 0.6);
-        }
+#chatbot-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0px 12px 25px rgba(0, 74, 173, 0.6);
+}
 
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(0, 74, 173, 0.5);
-            }
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 74, 173, 0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(0, 74, 173, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 74, 173, 0); }
+}
 
-            70% {
-                box-shadow: 0 0 0 15px rgba(0, 74, 173, 0);
-            }
+#chat-window {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    width: 320px;
+    max-width: 90vw; /* 🔥 clave mobile */
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    border: none;
+    overflow: hidden;
+}
 
-            100% {
-                box-shadow: 0 0 0 0 rgba(0, 74, 173, 0);
-            }
-        }
+#chat-header {
+    background: linear-gradient(135deg, #00275a, #004aad);
+    color: white;
+    padding: 12px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        #chat-window {
-            font-family: 'Poppins', sans-serif;
-            font-size: 14px;
-            line-height: 1.4;
-            width: 320px;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
-            position: absolute;
-            bottom: 70px;
-            right: 0;
-            display: none;
-            flex-direction: column;
-            border: none;
-            overflow: hidden;
-        }
+#close-chat {
+    cursor: pointer;
+    font-size: 20px;
+    transition: transform 0.2s;
+}
 
-        #chat-header {
-            background: linear-gradient(135deg, #00275a, #004aad);
-            color: white;
-            padding: 12px;
-            font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+#close-chat:hover {
+    transform: scale(1.2);
+}
 
-        #close-chat {
-            cursor: pointer;
-            font-size: 20px;
-            transition: transform 0.2s;
-        }
 
-        #close-chat:hover {
-            transform: scale(1.2);
-        }
+#chat-body {
+    padding: 12px;
+    max-height: 220px;
+    overflow-y: auto;
+    color: #333;
+}
 
-        #chat-body {
-            padding: 12px;
-            max-height: 220px;
-            overflow-y: auto;
-            color: #333;
-        }
 
-        #chat-footer {
-            display: flex;
-            padding: 10px;
-            border-top: 1px solid #eee;
-            background-color: #fafafa;
-        }
+#chat-footer {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* 🔥 mejor que margin */
+    padding: 10px;
+    border-top: 1px solid #eee;
+    background-color: #fafafa;
+}
 
-        #chat-input {
-            flex: 1;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            outline: none;
-        }
+#chat-input {
+    flex: 1;
+    min-width: 0; 
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
 
-        #send-btn {
-            background: #004aad;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            cursor: pointer;
-            margin-left: 5px;
-            border-radius: 8px;
-            transition: background 0.3s;
-        }
+#send-btn {
+    flex-shrink: 0; 
+    white-space: nowrap;
+    background: #004aad;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s;
+    font-size: 14px;
+}
 
-        #send-btn:hover {
-            background: #00337a;
-        }
+#send-btn:hover {
+    background: #00337a;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+
+    #chat-window {
+        width: 100%;
+        right: 0;
+        bottom: 80px;
+        border-radius: 12px;
+    }
+
+    #chat-footer {
+        gap: 5px;
+        padding: 8px;
+    }
+
+    #chat-input {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    #send-btn {
+        padding: 6px 8px;
+        font-size: 13px;
+    }
+
+    #chatbot-button {
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+}
 
         /* SERVICIOS */
 
@@ -1115,17 +1146,17 @@
                     const target = +counter.getAttribute('data-target');
                     let count = 0;
 
-                    const updateCount = () => {
-                        const increment = target / 100;
+            const updateCount = () => {
+                const increment = target / 100;
 
-                        if (count < target) {
-                            count += increment;
-                            counter.innerText = Math.floor(count);
-                            setTimeout(updateCount, 20);
-                        } else {
-                            counter.innerText = target.toLocaleString();
-                        }
-                    };
+                if (count < target) {
+                    count += increment;
+                    counter.innerText = Math.floor(count).toLocaleString('es-CL');
+                    setTimeout(updateCount, 20);
+                } else {
+                    counter.innerText = "+ de " + target.toLocaleString('es-CL');
+                }
+            };
 
                     updateCount();
                 });
